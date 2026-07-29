@@ -15,36 +15,45 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileToggle = document.querySelector('.mobile-toggle');
   const navMenu = document.querySelector('.nav-menu');
 
-  // Create mobile nav backdrop element
+  // Create mobile nav backdrop element inside site-header if header exists
   let navBackdrop = document.querySelector('.nav-backdrop');
-  if (!navBackdrop) {
+  if (!navBackdrop && header) {
     navBackdrop = document.createElement('div');
     navBackdrop.className = 'nav-backdrop';
     navBackdrop.style.cssText = `
       position: fixed;
       inset: 0;
-      background: rgba(11, 17, 32, 0.7);
-      backdrop-filter: blur(4px);
-      z-index: 1999;
+      background: rgba(11, 17, 32, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 2400;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.3s ease;
+      pointer-events: none;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
     `;
-    document.body.appendChild(navBackdrop);
+    header.appendChild(navBackdrop);
   }
 
   function toggleMobileNav(show) {
+    if (!navMenu) return;
     const shouldOpen = show !== undefined ? show : !navMenu.classList.contains('open');
     if (shouldOpen) {
       navMenu.classList.add('open');
-      navBackdrop.style.opacity = '1';
-      navBackdrop.style.visibility = 'visible';
+      if (navBackdrop) {
+        navBackdrop.style.opacity = '1';
+        navBackdrop.style.visibility = 'visible';
+        navBackdrop.style.pointerEvents = 'auto';
+      }
       if (mobileToggle) mobileToggle.innerHTML = '✕';
       document.body.style.overflow = 'hidden';
     } else {
       navMenu.classList.remove('open');
-      navBackdrop.style.opacity = '0';
-      navBackdrop.style.visibility = 'hidden';
+      if (navBackdrop) {
+        navBackdrop.style.opacity = '0';
+        navBackdrop.style.visibility = 'hidden';
+        navBackdrop.style.pointerEvents = 'none';
+      }
       if (mobileToggle) mobileToggle.innerHTML = '☰';
       document.body.style.overflow = '';
     }
@@ -56,9 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleMobileNav();
     });
 
-    navBackdrop.addEventListener('click', () => {
-      toggleMobileNav(false);
-    });
+    if (navBackdrop) {
+      navBackdrop.addEventListener('click', () => {
+        toggleMobileNav(false);
+      });
+    }
 
     // Close mobile nav when clicking any nav link
     document.querySelectorAll('.nav-link, .mega-item').forEach(link => {

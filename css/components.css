@@ -1,5 +1,5 @@
 /* CHRD Training Academy - Component Stylesheet */
-/* Mobile-First Responsive System (320px - 2560px+) */
+/* Mobile-First Responsive System & Navigation Drawer Fix */
 
 /* Buttons */
 .btn {
@@ -8,7 +8,7 @@
   justify-content: center;
   gap: 0.6rem;
   padding: 0.8rem 1.75rem;
-  min-height: 48px; /* Touch target standard */
+  min-height: 48px;
   border-radius: var(--radius-full);
   font-family: var(--font-body);
   font-weight: 600;
@@ -110,7 +110,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 2500; /* Primary header stacking layer */
   transition: all var(--transition-normal);
   padding: 1.15rem 0;
   background-color: transparent;
@@ -131,6 +131,8 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  position: relative;
+  z-index: 2510;
 }
 
 .logo-brand {
@@ -138,6 +140,8 @@
   align-items: center;
   gap: 0.75rem;
   text-decoration: none;
+  position: relative;
+  z-index: 2600;
 }
 
 .logo-icon {
@@ -287,7 +291,7 @@
   color: var(--text-secondary);
 }
 
-/* Mobile Navigation Hamburger Drawer */
+/* Mobile & Tablet Navigation Hamburger Drawer */
 .mobile-toggle {
   display: none;
   background: var(--card-bg);
@@ -303,12 +307,13 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  position: relative;
+  z-index: 2600; /* Stacks above backdrop and menu drawer */
 }
 
 @media (max-width: 992px) {
   .mobile-toggle {
     display: flex;
-    z-index: 2001;
   }
 
   .nav-menu {
@@ -323,11 +328,12 @@
     flex-direction: column;
     align-items: stretch;
     padding: 5rem 1.5rem 2rem 1.5rem;
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.85);
     transition: right var(--transition-normal);
-    z-index: 2000;
+    z-index: 2550; /* Stacks ABOVE backdrop (2400) */
     overflow-y: auto;
     box-sizing: border-box;
+    pointer-events: auto;
   }
 
   .nav-menu.open {
@@ -763,7 +769,7 @@
   }
 }
 
-/* Timeline Process (Zero Mobile Overflow) */
+/* Timeline Process */
 .timeline-process {
   position: relative;
   max-width: 1000px;
@@ -1114,7 +1120,7 @@
   border: 1px solid var(--border-subtle);
   background-color: var(--card-bg);
   font-family: var(--font-body);
-  font-size: 16px; /* Prevents auto-zoom on mobile iOS browsers */
+  font-size: 16px;
   color: var(--text-primary);
   transition: all var(--transition-fast);
   box-sizing: border-box;
@@ -1178,7 +1184,7 @@ textarea.form-control {
   inset: 0;
   background: rgba(11, 17, 32, 0.92);
   backdrop-filter: blur(12px);
-  z-index: 2500;
+  z-index: 3000;
   display: flex;
   align-items: center;
   justify-content: center;
