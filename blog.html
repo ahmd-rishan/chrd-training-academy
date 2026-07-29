@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog & Career Guidance | CHRD Training Academy Malappuram</title>
+  <meta name="description" content="Read latest education insights, teacher training tips, digital marketing guides, hospital administration career advice, and academy updates from CHRD Training Academy, Malappuram.">
+  <meta name="keywords" content="CHRD Blog, Teacher Training Tips Kerala, Digital Marketing Articles Malappuram, Hospital Administration Career Guide, Montessori Education Updates">
+  
+  <!-- Favicon & Brand Logos -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Blog & Career Guidance | CHRD Training Academy">
+  <meta property="og:description" content="Stay updated with educational insights, career guides, and news from CHRD Training Academy.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/logo.png">
+  
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  
+  <!-- Schema.org Blog Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "CHRD Training Academy Blog",
+    "description": "Insights, career guides, and updates from CHRD Training Academy, Malappuram.",
+    "publisher": {
+      "@type": "EducationalOrganization",
+      "name": "CHRD Training Academy",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://chrdkerala.org/assets/logo.png"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Sticky Glass Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-brand">
+        <img src="assets/logo.png" alt="CHRD Training Academy Logo" class="brand-logo-img">
+        <div class="logo-text">
+          <span class="logo-name">CHRD TRAINING ACADEMY</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="courses.html" class="nav-link">Courses</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Apply Now</a>
+      </nav>
+
+      <button class="mobile-toggle" aria-label="Toggle Navigation Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Page Banner Header -->
+  <section class="section" style="padding-top: clamp(6.5rem, 10vw, 9.5rem); padding-bottom: 2.5rem; background: radial-gradient(80% 80% at 50% 0%, rgba(0, 200, 150, 0.1) 0%, rgba(11, 17, 32, 0) 100%), var(--primary-bg); text-align: left;">
+    <div class="container">
+      <div class="reveal fade-up">
+        <div style="font-size: 0.9rem; color: var(--accent-emerald); font-weight: 600; margin-bottom: 0.75rem;">
+          <a href="index.html" style="color: var(--text-secondary); text-decoration: none;">Home</a> <span style="color: var(--text-muted); margin: 0 0.35rem;">›</span> <span style="color: var(--accent-emerald);">Blog</span>
+        </div>
+        <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 800; color: var(--text-primary); margin-bottom: 0.75rem;">
+          Blog
+        </h1>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 720px; margin-bottom: 0;">
+          Stay updated with the latest insights, career guidance, educational resources, industry trends, and news from CHRD Training Academy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Blog Container -->
+  <section class="section" style="padding-top: 1.5rem;">
+    <div class="container">
+      
+      <!-- Category Filter Pills & Search Bar -->
+      <div class="reveal fade-up" style="margin-bottom: 2.5rem; background: var(--card-bg); padding: 1.25rem; border-radius: var(--radius-xl); border: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: 1.25rem;">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
+          <!-- Category Filter Buttons -->
+          <div id="blogCategories" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button class="btn btn-sm btn-primary category-btn active" data-category="all">All</button>
+            <button class="btn btn-sm btn-outline-white category-btn" data-category="career">Career Guidance</button>
+            <button class="btn btn-sm btn-outline-white category-btn" data-category="education">Education</button>
+            <button class="btn btn-sm btn-outline-white category-btn" data-category="skills">Skill Development</button>
+            <button class="btn btn-sm btn-outline-white category-btn" data-category="news">Academy News</button>
+            <button class="btn btn-sm btn-outline-white category-btn" data-category="digital">Digital Skills</button>
+            <button class="btn btn-sm btn-outline-white category-btn" data-category="teaching">Teaching & Training</button>
+          </div>
+
+          <!-- Search Input -->
+          <div style="min-width: 260px; flex-grow: 1; max-width: 380px;">
+            <input type="text" id="blogSearchInput" class="form-control" placeholder="🔍 Search articles by keyword..." style="margin-bottom: 0;">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Featured Blog Article Hero -->
+      <div class="reveal fade-up" style="margin-bottom: 3.5rem;">
+        <div style="background: var(--card-bg); border-radius: var(--radius-xl); border: 1px solid var(--border-subtle); overflow: hidden; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 0; box-shadow: var(--shadow-lg);" class="featured-blog-card">
+          <div style="padding: clamp(1.75rem, 3vw, 3rem); display: flex; flex-direction: column; justify-content: center;">
+            <div style="display: flex; gap: 0.65rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap;">
+              <span class="badge badge-emerald">Featured Article</span>
+              <span class="badge badge-purple">Career Guidance</span>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">July 28, 2026 • 5 min read</span>
+            </div>
+            <h2 style="font-size: clamp(1.4rem, 2.4vw, 2.1rem); font-weight: 800; line-height: 1.25; margin-bottom: 1rem;">
+              <a href="blog-detail.html" style="color: var(--text-primary); text-decoration: none;" class="hover-emerald">How Early Childhood Teacher Training is Shaping Modern Education in Kerala</a>
+            </h2>
+            <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.65; margin-bottom: 1.75rem;">
+              Early childhood education has evolved dramatically with the adoption of Montessori principles and activity-based learning. Discover how certified teacher training prepares educators to build engaging, child-centric classroom environments.
+            </p>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--accent-emerald-soft); color: var(--accent-emerald); display: flex; align-items: center; justify-content: center; font-weight: bold;">C</div>
+                <div>
+                  <div style="font-weight: 700; font-size: 0.9rem; color: var(--text-primary);">CHRD Academic Team</div>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">Education Specialist</div>
+                </div>
+              </div>
+              <a href="blog-detail.html" class="btn btn-primary btn-sm">Read Article →</a>
+            </div>
+          </div>
+          <div style="background: var(--secondary-bg); min-height: 280px; position: relative; overflow: hidden;">
+            <svg width="100%" height="100%" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%; object-fit: cover;">
+              <rect width="500" height="350" fill="#131D36"/>
+              <circle cx="250" cy="175" r="120" fill="#00C896" opacity="0.2"/>
+              <path d="M150 220C180 160 320 160 350 220" stroke="#00C896" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="200" cy="140" r="20" fill="#7C5CFF"/>
+              <circle cx="300" cy="140" r="20" fill="#00C896"/>
+              <text x="50%" y="82%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="22" font-weight="700">TEACHER TRAINING INSIGHTS</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content Grid with Sidebar -->
+      <div style="display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem;" class="blog-layout-grid">
+        
+        <!-- Left: Blog Posts Grid -->
+        <div>
+          <div class="grid grid-cols-2" id="blogPostGrid" style="gap: 1.5rem;">
+            
+            <!-- Post 1 -->
+            <article class="course-card blog-post-card reveal fade-up stagger-1" data-category="digital">
+              <div class="course-media" style="height: 180px;">
+                <svg width="100%" height="100%" viewBox="0 0 400 200" fill="none">
+                  <rect width="400" height="200" fill="#131D36"/>
+                  <circle cx="200" cy="100" r="70" fill="#7C5CFF" opacity="0.25"/>
+                  <text x="50%" y="55%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="18" font-weight="700">DIGITAL MARKETING</text>
+                </svg>
+                <div class="course-badge-overlay">
+                  <span class="badge badge-purple">Digital Skills</span>
+                </div>
+              </div>
+              <div class="course-body">
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">July 22, 2026 • 4 min read</div>
+                <h3 class="course-title" style="font-size: 1.1rem;"><a href="blog-detail.html">Top 5 Digital Marketing Skills Employers Are Looking For in 2026</a></h3>
+                <p class="course-desc" style="font-size: 0.9rem;">From Performance Marketing and SEO to Social Media Analytics, explore the most high-demand digital skills for career growth.</p>
+                <div class="course-footer">
+                  <span style="font-size: 0.85rem; color: var(--text-secondary);">By CHRD Mentor</span>
+                  <a href="blog-detail.html" class="btn btn-secondary btn-sm">Read Article →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Post 2 -->
+            <article class="course-card blog-post-card reveal fade-up stagger-2" data-category="skills">
+              <div class="course-media" style="height: 180px;">
+                <svg width="100%" height="100%" viewBox="0 0 400 200" fill="none">
+                  <rect width="400" height="200" fill="#131D36"/>
+                  <circle cx="200" cy="100" r="70" fill="#00C896" opacity="0.25"/>
+                  <text x="50%" y="55%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="18" font-weight="700">HOSPITAL ADMIN</text>
+                </svg>
+                <div class="course-badge-overlay">
+                  <span class="badge badge-emerald">Healthcare</span>
+                </div>
+              </div>
+              <div class="course-body">
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">July 18, 2026 • 6 min read</div>
+                <h3 class="course-title" style="font-size: 1.1rem;"><a href="blog-detail.html">Career Opportunities in Hospital Administration Across Kerala & GCC</a></h3>
+                <p class="course-desc" style="font-size: 0.9rem;">Healthcare administration is expanding rapidly. Learn about job roles, medical billing, hospital desk management, and placement paths.</p>
+                <div class="course-footer">
+                  <span style="font-size: 0.85rem; color: var(--text-secondary);">By Admin Faculty</span>
+                  <a href="blog-detail.html" class="btn btn-secondary btn-sm">Read Article →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Post 3 -->
+            <article class="course-card blog-post-card reveal fade-up stagger-3" data-category="career">
+              <div class="course-media" style="height: 180px;">
+                <svg width="100%" height="100%" viewBox="0 0 400 200" fill="none">
+                  <rect width="400" height="200" fill="#131D36"/>
+                  <circle cx="200" cy="100" r="70" fill="#7C5CFF" opacity="0.25"/>
+                  <text x="50%" y="55%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="18" font-weight="700">PRACTICAL ACCOUNTING</text>
+                </svg>
+                <div class="course-badge-overlay">
+                  <span class="badge badge-purple">Career Guidance</span>
+                </div>
+              </div>
+              <div class="course-body">
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">July 10, 2026 • 5 min read</div>
+                <h3 class="course-title" style="font-size: 1.1rem;"><a href="blog-detail.html">Why Practical Tally Prime & GST Training is Essential for Accountants</a></h3>
+                <p class="course-desc" style="font-size: 0.9rem;">Theoretical accounting isn't enough for modern firms. Discover how real-time GST filing and Tally practicals boost employability.</p>
+                <div class="course-footer">
+                  <span style="font-size: 0.85rem; color: var(--text-secondary);">By Finance Faculty</span>
+                  <a href="blog-detail.html" class="btn btn-secondary btn-sm">Read Article →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Post 4 -->
+            <article class="course-card blog-post-card reveal fade-up stagger-4" data-category="news">
+              <div class="course-media" style="height: 180px;">
+                <svg width="100%" height="100%" viewBox="0 0 400 200" fill="none">
+                  <rect width="400" height="200" fill="#131D36"/>
+                  <circle cx="200" cy="100" r="70" fill="#00C896" opacity="0.25"/>
+                  <text x="50%" y="55%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="18" font-weight="700">ACADEMY NEWS</text>
+                </svg>
+                <div class="course-badge-overlay">
+                  <span class="badge badge-emerald">Academy News</span>
+                </div>
+              </div>
+              <div class="course-body">
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">July 02, 2026 • 3 min read</div>
+                <h3 class="course-title" style="font-size: 1.1rem;"><a href="blog-detail.html">CHRD Training Academy Celebrates ISO 9001:2015 Excellence Award</a></h3>
+                <p class="course-desc" style="font-size: 0.9rem;">CHRD Kerala continues to set high standards in vocational education, teacher training, and practical skill certification in Malappuram.</p>
+                <div class="course-footer">
+                  <span style="font-size: 0.85rem; color: var(--text-secondary);">By Editorial Desk</span>
+                  <a href="blog-detail.html" class="btn btn-secondary btn-sm">Read Article →</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Pagination / Load More Button -->
+          <div style="text-align: center; margin-top: 3rem;">
+            <button id="loadMoreBlogBtn" class="btn btn-secondary btn-lg">Load More Articles ↓</button>
+          </div>
+        </div>
+
+        <!-- Right: Sidebar (Desktop / Below on Mobile) -->
+        <aside style="display: flex; flex-direction: column; gap: 2rem;">
+          
+          <!-- Widget: Search -->
+          <div style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+            <h4 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-primary);">Search Articles</h4>
+            <input type="text" id="sidebarSearch" class="form-control" placeholder="Type keywords...">
+          </div>
+
+          <!-- Widget: Categories list -->
+          <div style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+            <h4 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-primary);">Categories</h4>
+            <ul style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
+              <li style="display: flex; justify-content: space-between;"><a href="javascript:void(0)" class="category-link" data-category="career" style="color: var(--text-secondary); text-decoration: none;">Career Guidance</a> <span style="color: var(--accent-emerald); font-weight: 700;">(12)</span></li>
+              <li style="display: flex; justify-content: space-between;"><a href="javascript:void(0)" class="category-link" data-category="teaching" style="color: var(--text-secondary); text-decoration: none;">Teacher Training</a> <span style="color: var(--accent-emerald); font-weight: 700;">(18)</span></li>
+              <li style="display: flex; justify-content: space-between;"><a href="javascript:void(0)" class="category-link" data-category="digital" style="color: var(--text-secondary); text-decoration: none;">Digital Marketing</a> <span style="color: var(--accent-emerald); font-weight: 700;">(10)</span></li>
+              <li style="display: flex; justify-content: space-between;"><a href="javascript:void(0)" class="category-link" data-category="skills" style="color: var(--text-secondary); text-decoration: none;">Hospital Admin</a> <span style="color: var(--accent-emerald); font-weight: 700;">(8)</span></li>
+              <li style="display: flex; justify-content: space-between;"><a href="javascript:void(0)" class="category-link" data-category="news" style="color: var(--text-secondary); text-decoration: none;">Academy News</a> <span style="color: var(--accent-emerald); font-weight: 700;">(6)</span></li>
+            </ul>
+          </div>
+
+          <!-- Widget: Recent Posts -->
+          <div style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+            <h4 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-primary);">Recent Posts</h4>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div style="display: flex; gap: 0.75rem; align-items: center;">
+                <div style="width: 50px; height: 50px; border-radius: var(--radius-sm); background: var(--secondary-bg); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--accent-emerald);">01</div>
+                <div>
+                  <a href="blog-detail.html" style="font-size: 0.9rem; font-weight: 600; color: var(--text-primary); text-decoration: none; line-height: 1.3;" class="hover-emerald">Early Childhood Montessori TTC Overview</a>
+                  <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">July 28, 2026</div>
+                </div>
+              </div>
+              <div style="display: flex; gap: 0.75rem; align-items: center;">
+                <div style="width: 50px; height: 50px; border-radius: var(--radius-sm); background: var(--secondary-bg); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--accent-purple);">02</div>
+                <div>
+                  <a href="blog-detail.html" style="font-size: 0.9rem; font-weight: 600; color: var(--text-primary); text-decoration: none; line-height: 1.3;" class="hover-emerald">Top Digital Skills Needed in 2026</a>
+                  <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">July 22, 2026</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Widget: Popular Tags -->
+          <div style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+            <h4 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-primary);">Popular Tags</h4>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <span class="badge badge-white">Montessori</span>
+              <span class="badge badge-white">Digital Marketing</span>
+              <span class="badge badge-white">Tally GST</span>
+              <span class="badge badge-white">Hospital Admin</span>
+              <span class="badge badge-white">Spoken English</span>
+              <span class="badge badge-white">CHRD Kerala</span>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Box Section -->
+  <section class="section section-bg-soft" style="padding: 4rem 0;">
+    <div class="container">
+      <div style="background: linear-gradient(135deg, var(--card-bg) 0%, var(--secondary-bg) 100%); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: clamp(2rem, 4vw, 3.5rem); text-align: center; max-width: 900px; margin: 0 auto; box-shadow: var(--shadow-lg);" class="reveal scale-up">
+        <div class="badge badge-emerald" style="margin-bottom: 1rem;">Career Guidance</div>
+        <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--text-primary); margin-bottom: 1rem;">
+          Ready to Turn Your Learning into a Career?
+        </h2>
+        <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem; max-width: 650px; margin-left: auto; margin-right: auto;">
+          Connect with CHRD admissions counselors to explore course schedules, fees, syllabus, and 100% placement support in Malappuram.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="courses.html" class="btn btn-primary btn-lg">Explore Courses →</a>
+          <a href="contact.html" class="btn btn-secondary btn-lg">Contact Admissions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/919745900084?text=Hello%20CHRD%20Training%20Academy,%20I%20would%20like%20to%20know%20more%20about%20your%20courses." class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">💬</a>
+
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo-brand" style="margin-bottom: 1.25rem;">
+            <img src="assets/logo.png" alt="CHRD Training Academy Logo" class="brand-logo-img">
+            <div class="logo-text">
+              <span class="logo-name" style="color: white;">CHRD TRAINING ACADEMY</span>
+            </div>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">
+            Centre for Human Resource Development Kerala (CHRD Kerala) is dedicated to quality, accessible, career-focused education and practical skill development.
+          </p>
+          <div style="color: var(--text-secondary); font-size: 0.9rem;">
+            📍 Vengara, Malappuram, Kerala 676304<br>
+            📞 +91 9745900084<br>
+            ✉️ chrdtrainingacademy@gmail.com
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="courses.html" class="footer-link">All Courses</a>
+            <a href="gallery.html" class="footer-link">Campus Gallery</a>
+            <a href="blog.html" class="footer-link">Blog & News</a>
+            <a href="contact.html" class="footer-link">Contact Us</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Top Programs</h4>
+          <div class="footer-links">
+            <a href="courses.html#teacher-training" class="footer-link">Montessori TTC</a>
+            <a href="courses.html#digital-marketing" class="footer-link">Digital Marketing</a>
+            <a href="courses.html#hospital-admin" class="footer-link">Hospital Administration</a>
+            <a href="courses.html#accounting" class="footer-link">Tally & GST Accounting</a>
+            <a href="courses.html#spoken-english" class="footer-link">Spoken English</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Working Hours</h4>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem;">
+            Monday – Saturday<br>
+            <strong style="color: white;">9:00 AM – 6:00 PM</strong><br>
+            Sunday: Closed
+          </p>
+          <a href="contact.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Get Directions →</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>Copyright © 2026 CHRD Training Academy | CHRD Kerala. All Rights Reserved.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="privacy.html" class="footer-link">Privacy Policy</a>
+          <a href="terms.html" class="footer-link">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/blog.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
