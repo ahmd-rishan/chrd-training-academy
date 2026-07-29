@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Courses & Programs | CHRD Training Academy</title>
+  <meta name="description" content="Explore job-oriented certification courses in Kerala: Montessori Teacher Training, Digital Marketing, Hospital Administration, Tally Accounting, Spoken English, Arabic TTC, and Graphic Design.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-brand">
+        <div class="logo-icon">C</div>
+        <div class="logo-text">
+          <span class="logo-name">CHRD ACADEMY</span>
+          <span class="logo-sub">CHRD Kerala Ecosystem</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About CHRD</a>
+        <a href="courses.html" class="nav-link active">Courses</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Apply Now</a>
+      </nav>
+
+      <button class="mobile-toggle" aria-label="Toggle Navigation Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="section" style="padding-top: 8rem; background: var(--bg-soft);">
+    <div class="container text-center" style="max-width: 800px; margin: 0 auto;">
+      <div class="badge badge-emerald">Our Career Programs</div>
+      <h1>Job-Oriented Certification Courses in Kerala</h1>
+      <p style="font-size: 1.2rem; margin-top: 1rem;">
+        Practical certification courses across education, digital tech, healthcare, business, design, and language streams. Choose your path to career growth.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+        <button class="btn btn-primary course-filter-btn" data-filter="all">All Programs</button>
+        <button class="btn btn-secondary course-filter-btn" data-filter="teacher-training">Teacher Training</button>
+        <button class="btn btn-secondary course-filter-btn" data-filter="professional">Professional & Business</button>
+        <button class="btn btn-secondary course-filter-btn" data-filter="healthcare">Healthcare Admin</button>
+        <button class="btn btn-secondary course-filter-btn" data-filter="languages">Languages & IT</button>
+        <button class="btn btn-secondary course-filter-btn" data-filter="vocational">Vocational & Design</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Directory Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-3" id="coursesGrid">
+
+        <!-- 1. Montessori TTC -->
+        <div class="course-card-wrapper course-card reveal fade-up" data-category="teacher-training">
+          <div class="course-media">
+            <svg width="100%" height="100%" viewBox="0 0 400 200" fill="none">
+              <rect width="400" height="200" fill="#131D36"/>
+              <circle cx="200" cy="100" r="70" fill="#00C896" opacity="0.25"/>
+              <text x="50%" y="55%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="20" font-weight="700">MONTESSORI TTC</text>
+            </svg>
+            <div class="course-badge-overlay">
+              <span class="badge badge-emerald">1 Year</span>
+              <span class="badge badge-white">Online / Offline</span>
+            </div>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="meta-item">🎓 Teacher Training</span>
+            </div>
+            <h3 class="course-title"><a href="javascript:void(0)" onclick="openCourseModal('montessori-ttc')">Pre-Primary & Montessori TTC</a></h3>
+            <p class="course-desc">Globally recognized early-childhood teaching method with classroom apparatus practice and child psychology.</p>
+            <div class="course-footer">
+              <span style="font-weight: 700; font-size: 0.85rem; color: var(--accent-emerald);">Admissions Open</span>
+              <button onclick="openCourseModal('montessori-ttc')" class="btn btn-secondary btn-sm">Course Details →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Arabic Primary TTC -->
+        <div class="course-card-wrapper course-card reveal fade-up stagger-1" data-category="teacher-training">
+          <div class="course-media">
+            <svg width="100%" height="100%" viewBox="0 0 400 200" fill="none">
+              <rect width="400" height="200" fill="#131D36"/>
+              <circle cx="200" cy="100" r="70" fill="#7C5CFF" opacity="0.25"/>
+              <text x="50%" y="55%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="20" font-weight="700">ARABIC TTC</text>
+            </svg>
+            <div class="course-badge-overlay">
+              <span class="badge badge-emerald">6 Months</span>
+              <span class="badge badge-white">Online / Offline</span>
+            </div>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="meta-item">🎓 Teacher Training</span>
+            </div>
+            <h3 class="course-title"><a href="javascript:void(0)" onclick="openCourseModal('arabic-primary-ttc')">Arabic Primary TTC</a></h3>
+            <p class="course-desc">Methodology, phonetics, grammar, and modern classroom delivery for Arabic language educators.</p>
+            <div class="course-footer">
+              <span style="font-weight: 700; font-size: 0.85rem; color: var(--accent-emerald);">Specialized</span>
+              <button onclick="openCourseModal('arabic-primary-ttc')" class="btn btn-secondary btn-sm">Course Details →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Digital Marketing -->
+        <div class="course-card-wrapper course-card reveal fade-up stagger-2" data-category="professional">
+          <div class="course-media">
+            <svg width="100%" height="100%" viewBox="0 0 400 200" fill="none">
+              <rect width="400" height="200" fill="#131D36"/>
+              <circle cx="200" cy="100" r="70" fill="#00C896" opacity="0.25"/>
+              <text x="50%" y="55%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="20" font-weight="700">DIGITAL MARKETING</text>
+            </svg>
+            <div class="course-badge-overlay">
+              <span class="badge badge-purple">3 Months</span>
+              <span class="badge badge-white">Live Ads</span>
+            </div>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="meta-item">💻 Tech & Marketing</span>
+            </div>
+            <h3 class="course-title"><a href="javascript:void(0)" onclick="openCourseModal('digital-marketing')">Digital Marketing Masterclass</a></h3>
+            <p class="course-desc">SEO, social media marketing, website building, Meta & Google ads, and analytics taught through live campaigns.</p>
+            <div class="course-footer">
+              <span style="font-weight: 700; font-size: 0.85rem; color: var(--accent-emerald);">High Demand</span>
+              <button onclick="openCourseModal('digital-marketing')" class="btn btn-secondary btn-sm">Course Details →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Hospital Administration -->
+        <div class="course-card-wrapper course-card reveal fade-up" data-category="healthcare">
+          <div class="course-media">
+            <svg width="100%" height="100%" viewBox="0 0 400 200" fill="none">
+              <rect width="400" height="200" fill="#131D36"/>
+              <circle cx="200" cy="100" r="70" fill="#7C5CFF" opacity="0.25"/>
+              <text x="50%" y="55%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="20" font-weight="700">HOSPITAL ADMIN</text>
+            </svg>
+            <div class="course-badge-overlay">
+              <span class="badge badge-emerald">6 Months</span>
+              <span class="badge badge-white">Offline</span>
+            </div>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="meta-item">🏥 Healthcare Management</span>
+            </div>
+            <h3 class="course-title"><a href="javascript:void(0)" onclick="openCourseModal('hospital-administration')">Hospital Administration</a></h3>
+            <p class="course-desc">Career-ready training for hospital management, medical billing, front-desk, and patient care coordination.</p>
+            <div class="course-footer">
+              <span style="font-weight: 700; font-size: 0.85rem; color: var(--accent-emerald);">GCC Ready</span>
+              <button onclick="openCourseModal('hospital-administration')" class="btn btn-secondary btn-sm">Course Details →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Tally & Accounting -->
+        <div class="course-card-wrapper course-card reveal fade-up stagger-1" data-category="professional">
+          <div class="course-media">
+            <svg width="100%" height="100%" viewBox="0 0 400 200" fill="none">
+              <rect width="400" height="200" fill="#131D36"/>
+              <circle cx="200" cy="100" r="70" fill="#00C896" opacity="0.25"/>
+              <text x="50%" y="55%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="20" font-weight="700">ACCOUNTING & TALLY</text>
+            </svg>
+            <div class="course-badge-overlay">
+              <span class="badge badge-emerald">4 Months</span>
+              <span class="badge badge-white">Offline</span>
+            </div>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="meta-item">📊 Finance & Business</span>
+            </div>
+            <h3 class="course-title"><a href="javascript:void(0)" onclick="openCourseModal('accounting-tally')">Practical Accounting & GST</a></h3>
+            <p class="course-desc">Practical accounting with Tally Prime, GST returns filing, TDS, and corporate bookkeeping.</p>
+            <div class="course-footer">
+              <span style="font-weight: 700; font-size: 0.85rem; color: var(--accent-emerald);">Core Skill</span>
+              <button onclick="openCourseModal('accounting-tally')" class="btn btn-secondary btn-sm">Course Details →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Spoken English -->
+        <div class="course-card-wrapper course-card reveal fade-up stagger-2" data-category="languages">
+          <div class="course-media">
+            <svg width="100%" height="100%" viewBox="0 0 400 200" fill="none">
+              <rect width="400" height="200" fill="#131D36"/>
+              <circle cx="200" cy="100" r="70" fill="#7C5CFF" opacity="0.25"/>
+              <text x="50%" y="55%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="20" font-weight="700">SPOKEN ENGLISH</text>
+            </svg>
+            <div class="course-badge-overlay">
+              <span class="badge badge-purple">2 Months</span>
+              <span class="badge badge-white">Online / Offline</span>
+            </div>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="meta-item">🗣️ Communication</span>
+            </div>
+            <h3 class="course-title"><a href="javascript:void(0)" onclick="openCourseModal('spoken-english')">Spoken English & Personality</a></h3>
+            <p class="course-desc">Speak fluently and confidently in job interviews, professional workplaces, and daily conversations.</p>
+            <div class="course-footer">
+              <span style="font-weight: 700; font-size: 0.85rem; color: var(--accent-emerald);">Confidence</span>
+              <button onclick="openCourseModal('spoken-english')" class="btn btn-secondary btn-sm">Course Details →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Office Administration -->
+        <div class="course-card-wrapper course-card reveal fade-up" data-category="professional">
+          <div class="course-media">
+            <svg width="100%" height="100%" viewBox="0 0 400 200" fill="none">
+              <rect width="400" height="200" fill="#131D36"/>
+              <circle cx="200" cy="100" r="70" fill="#00C896" opacity="0.25"/>
+              <text x="50%" y="55%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="20" font-weight="700">OFFICE ADMIN</text>
+            </svg>
+            <div class="course-badge-overlay">
+              <span class="badge badge-emerald">3 Months</span>
+              <span class="badge badge-white">Online / Offline</span>
+            </div>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="meta-item">🏢 Corporate Skill</span>
+            </div>
+            <h3 class="course-title"><a href="javascript:void(0)" onclick="openCourseModal('office-administration')">Office Administration</a></h3>
+            <p class="course-desc">Build the front-office, administrative, MS Office, and correspondence skills needed in modern companies.</p>
+            <div class="course-footer">
+              <span style="font-weight: 700; font-size: 0.85rem; color: var(--accent-emerald);">Essential</span>
+              <button onclick="openCourseModal('office-administration')" class="btn btn-secondary btn-sm">Course Details →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Fashion Designing -->
+        <div class="course-card-wrapper course-card reveal fade-up stagger-1" data-category="vocational">
+          <div class="course-media">
+            <svg width="100%" height="100%" viewBox="0 0 400 200" fill="none">
+              <rect width="400" height="200" fill="#131D36"/>
+              <circle cx="200" cy="100" r="70" fill="#7C5CFF" opacity="0.25"/>
+              <text x="50%" y="55%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="20" font-weight="700">FASHION DESIGNING</text>
+            </svg>
+            <div class="course-badge-overlay">
+              <span class="badge badge-emerald">6 Months</span>
+              <span class="badge badge-white">Offline</span>
+            </div>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="meta-item">✂️ Vocational Design</span>
+            </div>
+            <h3 class="course-title"><a href="javascript:void(0)" onclick="openCourseModal('fashion-designing')">Fashion Designing</a></h3>
+            <p class="course-desc">Pattern drafting, garment construction, fashion illustration, and boutique setup guidance.</p>
+            <div class="course-footer">
+              <span style="font-weight: 700; font-size: 0.85rem; color: var(--accent-emerald);">Creative</span>
+              <button onclick="openCourseModal('fashion-designing')" class="btn btn-secondary btn-sm">Course Details →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Graphic Designing -->
+        <div class="course-card-wrapper course-card reveal fade-up stagger-2" data-category="vocational">
+          <div class="course-media">
+            <svg width="100%" height="100%" viewBox="0 0 400 200" fill="none">
+              <rect width="400" height="200" fill="#131D36"/>
+              <circle cx="200" cy="100" r="70" fill="#00C896" opacity="0.25"/>
+              <text x="50%" y="55%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="20" font-weight="700">GRAPHIC DESIGN</text>
+            </svg>
+            <div class="course-badge-overlay">
+              <span class="badge badge-purple">4 Months</span>
+              <span class="badge badge-white">Online / Offline</span>
+            </div>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="meta-item">🎨 Visual Design</span>
+            </div>
+            <h3 class="course-title"><a href="javascript:void(0)" onclick="openCourseModal('graphic-designing')">Graphic Designing & Branding</a></h3>
+            <p class="course-desc">Design social posts, logos, brochures, and brand assets using Photoshop, Illustrator, and Canva.</p>
+            <div class="course-footer">
+              <span style="font-weight: 700; font-size: 0.85rem; color: var(--accent-emerald);">Portfolio</span>
+              <button onclick="openCourseModal('graphic-designing')" class="btn btn-secondary btn-sm">Course Details →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Computer Skills -->
+        <div class="course-card-wrapper course-card reveal fade-up" data-category="languages">
+          <div class="course-media">
+            <svg width="100%" height="100%" viewBox="0 0 400 200" fill="none">
+              <rect width="400" height="200" fill="#131D36"/>
+              <circle cx="200" cy="100" r="70" fill="#7C5CFF" opacity="0.25"/>
+              <text x="50%" y="55%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="20" font-weight="700">COMPUTER SKILLS</text>
+            </svg>
+            <div class="course-badge-overlay">
+              <span class="badge badge-emerald">2 Months</span>
+              <span class="badge badge-white">Online / Offline</span>
+            </div>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="meta-item">🖥️ IT Basics</span>
+            </div>
+            <h3 class="course-title"><a href="javascript:void(0)" onclick="openCourseModal('computer-courses')">Essential Computer Skills</a></h3>
+            <p class="course-desc">Fundamental computer skills from MS Office to internet productivity and cybersecurity basics.</p>
+            <div class="course-footer">
+              <span style="font-weight: 700; font-size: 0.85rem; color: var(--accent-emerald);">Foundational</span>
+              <button onclick="openCourseModal('computer-courses')" class="btn btn-secondary btn-sm">Course Details →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. Foreign Languages -->
+        <div class="course-card-wrapper course-card reveal fade-up stagger-1" data-category="languages">
+          <div class="course-media">
+            <svg width="100%" height="100%" viewBox="0 0 400 200" fill="none">
+              <rect width="400" height="200" fill="#131D36"/>
+              <circle cx="200" cy="100" r="70" fill="#00C896" opacity="0.25"/>
+              <text x="50%" y="55%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="20" font-weight="700">GLOBAL LANGUAGES</text>
+            </svg>
+            <div class="course-badge-overlay">
+              <span class="badge badge-purple">3 Months</span>
+              <span class="badge badge-white">Online / Offline</span>
+            </div>
+          </div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="meta-item">🌐 Language Academy</span>
+            </div>
+            <h3 class="course-title"><a href="javascript:void(0)" onclick="openCourseModal('language-courses')">Global Language Academy</a></h3>
+            <p class="course-desc">Learn German, Arabic, French, or Hindi for higher education and overseas career opportunities.</p>
+            <div class="course-footer">
+              <span style="font-weight: 700; font-size: 0.85rem; color: var(--accent-emerald);">Abroad Ready</span>
+              <button onclick="openCourseModal('language-courses')" class="btn btn-secondary btn-sm">Course Details →</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Course Detail Modal -->
+  <div class="modal-overlay" id="courseModal">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeCourseModal()" aria-label="Close modal">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/919745900084?text=Hello%20CHRD%20Training%20Academy,%20I%20would%20like%20to%20know%20more%20about%20your%20courses." class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">💬</a>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>Copyright © 2026 CHRD Training Academy | CHRD Kerala. All Rights Reserved.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="privacy.html" class="footer-link">Privacy Policy</a>
+          <a href="terms.html" class="footer-link">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/courses.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
