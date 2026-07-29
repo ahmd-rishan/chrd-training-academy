@@ -1,0 +1,205 @@
+// CHRD Training Academy - Prisma Database Schema for PostgreSQL & Supabase
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  EDITOR
+}
+
+enum ContentStatus {
+  DRAFT
+  PUBLISHED
+  SCHEDULED
+  ARCHIVED
+}
+
+enum SubmissionStatus {
+  UNREAD
+  READ
+  ARCHIVED
+}
+
+model User {
+  id            String         @id @default(uuid())
+  email         String         @unique
+  name          String
+  avatar_url    String?
+  role          Role           @default(EDITOR)
+  created_at    DateTime       @default(now())
+  updated_at    DateTime       @updatedAt
+  blog_posts    BlogPost[]
+  activity_logs ActivityLog[]
+}
+
+model Category {
+  id          String     @id @default(uuid())
+  name        String     @unique
+  slug        String     @unique
+  description String?
+  color       String?    @default("#00C896")
+  icon        String?    @default("Folder")
+  created_at  DateTime   @default(now())
+  updated_at  DateTime   @updatedAt
+  blog_posts  BlogPost[]
+}
+
+model Tag {
+  id         String     @id @default(uuid())
+  name       String     @unique
+  slug       String     @unique
+  blog_posts BlogPost[] @relation("PostTags")
+}
+
+model BlogPost {
+  id               String        @id @default(uuid())
+  title            String
+  slug             String        @unique
+  excerpt          String?
+  content          String        @db.Text
+  featured_image   String?
+  status           ContentStatus @default(DRAFT)
+  is_featured      Boolean       @default(false)
+  reading_time     Int           @default(5)
+  seo_title        String?
+  meta_description String?
+  canonical_url    String?
+  published_at     DateTime?
+  created_at       DateTime      @default(now())
+  updated_at       DateTime      @updatedAt
+  author_id        String
+  author           User          @relation(fields: [author_id], references: [id])
+  category_id      String?
+  category         Category?     @relation(fields: [category_id], references: [id])
+  tags             Tag[]         @relation("PostTags")
+}
+
+model Album {
+  id          String        @id @default(uuid())
+  title       String
+  slug        String        @unique
+  description String?
+  cover_url   String?
+  created_at  DateTime      @default(now())
+  updated_at  DateTime      @updatedAt
+  items       GalleryItem[]
+}
+
+model GalleryItem {
+  id            String   @id @default(uuid())
+  title         String
+  image_url     String
+  alt_text      String?
+  description   String?
+  category      String   @default("Campus")
+  display_order Int      @default(0)
+  album_id      String?
+  album         Album?   @relation(fields: [album_id], references: [id])
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+}
+
+model Course {
+  id                  String        @id @default(uuid())
+  title               String
+  slug                String        @unique
+  category            String        @default("Skill Development")
+  duration            String
+  eligibility         String
+  fees                String
+  certification       String
+  mode                String        @default("Online & Offline")
+  short_description   String
+  full_description    String        @db.Text
+  curriculum          Json?
+  learning_outcomes   Json?
+  career_opportunities Json?
+  featured_image      String?
+  status              ContentStatus @default(PUBLISHED)
+  is_featured         Boolean       @default(false)
+  seo_title           String?
+  meta_description    String?
+  created_at          DateTime      @default(now())
+  updated_at          DateTime      @updatedAt
+}
+
+model Testimonial {
+  id           String   @id @default(uuid())
+  student_name String
+  photo_url    String?
+  course_name  String
+  role_title   String?
+  feedback     String   @db.Text
+  rating       Int      @default(5)
+  is_published Boolean  @default(true)
+  display_order Int     @default(0)
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
+}
+
+model Faculty {
+  id            String   @id @default(uuid())
+  name          String
+  designation   String
+  photo_url     String?
+  bio           String?  @db.Text
+  social_links  Json?
+  display_order Int      @default(0)
+  is_published  Boolean  @default(true)
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+}
+
+model ContactSubmission {
+  id              String           @id @default(uuid())
+  name            String
+  email           String
+  phone           String
+  subject         String?
+  message         String           @db.Text
+  course_interest String?
+  status          SubmissionStatus @default(UNREAD)
+  created_at      DateTime         @default(now())
+  updated_at      DateTime         @updatedAt
+}
+
+model MediaItem {
+  id           String   @id @default(uuid())
+  name         String
+  file_url     String
+  file_type    String
+  file_size    Int
+  storage_path String
+  folder       String   @default("general")
+  alt_text     String?
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
+}
+
+model SiteSetting {
+  id         String   @id @default(uuid())
+  key        String   @unique
+  value      String   @db.Text
+  group      String   @default("general")
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model ActivityLog {
+  id         String   @id @default(uuid())
+  user_id    String
+  user       User     @relation(fields: [user_id], references: [id])
+  action     String
+  entity     String
+  details    String?
+  created_at DateTime @default(now())
+}
