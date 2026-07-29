@@ -110,7 +110,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 2500; /* Primary header stacking layer */
+  z-index: 2500;
   transition: all var(--transition-normal);
   padding: 1.15rem 0;
   background-color: transparent;
@@ -135,6 +135,7 @@
   z-index: 2510;
 }
 
+/* Official Brand Logo System */
 .logo-brand {
   display: flex;
   align-items: center;
@@ -142,6 +143,22 @@
   text-decoration: none;
   position: relative;
   z-index: 2600;
+}
+
+.brand-logo-img {
+  height: 44px;
+  width: 44px;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  padding: 2px;
+  box-shadow: 0 4px 14px rgba(0, 200, 150, 0.3);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.logo-brand:hover .brand-logo-img {
+  transform: scale(1.06);
 }
 
 .logo-icon {
@@ -308,7 +325,7 @@
   justify-content: center;
   flex-shrink: 0;
   position: relative;
-  z-index: 2600; /* Stacks above backdrop and menu drawer */
+  z-index: 2600;
 }
 
 @media (max-width: 992px) {
@@ -330,7 +347,7 @@
     padding: 5rem 1.5rem 2rem 1.5rem;
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.85);
     transition: right var(--transition-normal);
-    z-index: 2550; /* Stacks ABOVE backdrop (2400) */
+    z-index: 2550;
     overflow-y: auto;
     box-sizing: border-box;
     pointer-events: auto;
