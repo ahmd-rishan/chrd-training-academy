@@ -11,22 +11,59 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 2. Mobile Menu Toggle
+  // 2. Mobile Menu Toggle & Backdrop Handler
   const mobileToggle = document.querySelector('.mobile-toggle');
   const navMenu = document.querySelector('.nav-menu');
 
+  // Create mobile nav backdrop element
+  let navBackdrop = document.querySelector('.nav-backdrop');
+  if (!navBackdrop) {
+    navBackdrop = document.createElement('div');
+    navBackdrop.className = 'nav-backdrop';
+    navBackdrop.style.cssText = `
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 17, 32, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 1999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    `;
+    document.body.appendChild(navBackdrop);
+  }
+
+  function toggleMobileNav(show) {
+    const shouldOpen = show !== undefined ? show : !navMenu.classList.contains('open');
+    if (shouldOpen) {
+      navMenu.classList.add('open');
+      navBackdrop.style.opacity = '1';
+      navBackdrop.style.visibility = 'visible';
+      if (mobileToggle) mobileToggle.innerHTML = '✕';
+      document.body.style.overflow = 'hidden';
+    } else {
+      navMenu.classList.remove('open');
+      navBackdrop.style.opacity = '0';
+      navBackdrop.style.visibility = 'hidden';
+      if (mobileToggle) mobileToggle.innerHTML = '☰';
+      document.body.style.overflow = '';
+    }
+  }
+
   if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-      const isOpen = navMenu.classList.contains('open');
-      mobileToggle.innerHTML = isOpen ? '✕' : '☰';
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMobileNav();
     });
 
-    // Close mobile nav when clicking a link
-    document.querySelectorAll('.nav-link').forEach(link => {
+    navBackdrop.addEventListener('click', () => {
+      toggleMobileNav(false);
+    });
+
+    // Close mobile nav when clicking any nav link
+    document.querySelectorAll('.nav-link, .mega-item').forEach(link => {
       link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        if (mobileToggle) mobileToggle.innerHTML = '☰';
+        toggleMobileNav(false);
       });
     });
   }
@@ -35,15 +72,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const revealElements = document.querySelectorAll('.reveal');
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -50px 0px',
-    threshold: 0.15
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.1
   };
 
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
-        // If element is a stat counter container, trigger counting
         if (entry.target.classList.contains('stat-card')) {
           const counterEl = entry.target.querySelector('.counter-value');
           if (counterEl && !counterEl.classList.contains('counted')) {
@@ -62,8 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function animateCounter(el) {
     const target = parseInt(el.getAttribute('data-target') || '0', 10);
     const suffix = el.getAttribute('data-suffix') || '';
-    const duration = 2000;
-    const startStep = 50;
+    const duration = 1800;
+    const startStep = 40;
     const increment = target / (duration / startStep);
     let current = 0;
 
@@ -86,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const content = item.querySelector('.accordion-content');
       const isActive = item.classList.contains('active');
 
-      // Close all active accordions in same container
       const container = item.closest('.accordion');
       if (container) {
         container.querySelectorAll('.accordion-item').forEach(i => {
@@ -102,36 +137,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  // 6. Testimonial Slider Controls (if present)
-  const testimonialItems = document.querySelectorAll('.testimonial-slide');
-  const prevBtn = document.getElementById('prevTestimonial');
-  const nextBtn = document.getElementById('nextTestimonial');
-  let currentSlide = 0;
-
-  if (testimonialItems.length > 1) {
-    function showSlide(index) {
-      testimonialItems.forEach((slide, i) => {
-        slide.style.display = i === index ? 'block' : 'none';
-      });
-    }
-
-    showSlide(currentSlide);
-
-    prevBtn?.addEventListener('click', () => {
-      currentSlide = (currentSlide - 1 + testimonialItems.length) % testimonialItems.length;
-      showSlide(currentSlide);
-    });
-
-    nextBtn?.addEventListener('click', () => {
-      currentSlide = (currentSlide + 1) % testimonialItems.length;
-      showSlide(currentSlide);
-    });
-
-    // Auto-advance testimonials every 6 seconds
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % testimonialItems.length;
-      showSlide(currentSlide);
-    }, 6000);
-  }
 });
