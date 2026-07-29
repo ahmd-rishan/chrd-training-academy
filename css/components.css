@@ -161,23 +161,6 @@
   transform: scale(1.06);
 }
 
-.logo-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-md);
-  background: var(--card-bg);
-  border: 1px solid var(--accent-emerald);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--accent-emerald);
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.25rem;
-  box-shadow: 0 4px 12px rgba(0, 200, 150, 0.2);
-  flex-shrink: 0;
-}
-
 .logo-text {
   display: flex;
   flex-direction: column;
@@ -186,18 +169,17 @@
 .logo-name {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: clamp(0.95rem, 1.2vw, 1.25rem);
+  font-size: clamp(0.9rem, 1.1vw, 1.15rem);
   line-height: 1.1;
   color: var(--text-primary);
   letter-spacing: -0.01em;
 }
 
-.logo-sub {
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: var(--accent-emerald);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+/* Responsive Logo Text Visibility: Hidden on Mobile (<768px), Visible on Tablet & Desktop (>=768px) */
+@media (max-width: 767px) {
+  .site-header .logo-text {
+    display: none !important;
+  }
 }
 
 .nav-menu {
