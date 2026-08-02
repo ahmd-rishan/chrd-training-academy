@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Mobile Menu Toggle & Backdrop Handler
   const mobileToggle = document.querySelector('.mobile-toggle');
   const navMenu = document.querySelector('.nav-menu');
+  let savedScrollY = 0;
 
   // Create mobile nav backdrop element directly appended to document.body
   let navBackdrop = document.querySelector('.nav-backdrop');
@@ -27,10 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!navMenu) return;
     const shouldOpen = show !== undefined ? show : !navMenu.classList.contains('open');
     if (shouldOpen) {
+      savedScrollY = window.scrollY || window.pageYOffset || 0;
       navMenu.classList.add('open');
       if (header) header.classList.add('menu-open');
       document.body.classList.add('menu-open');
-      document.documentElement.classList.add('menu-open');
       if (navBackdrop) {
         navBackdrop.classList.add('active');
         navBackdrop.style.opacity = '1';
@@ -42,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
       navMenu.classList.remove('open');
       if (header) header.classList.remove('menu-open');
       document.body.classList.remove('menu-open');
-      document.documentElement.classList.remove('menu-open');
       if (navBackdrop) {
         navBackdrop.classList.remove('active');
         navBackdrop.style.opacity = '0';
@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navBackdrop.style.pointerEvents = 'none';
       }
       if (mobileToggle) mobileToggle.innerHTML = '☰';
+      window.scrollTo(0, savedScrollY);
     }
   }
 
