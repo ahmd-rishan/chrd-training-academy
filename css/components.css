@@ -1434,14 +1434,38 @@ textarea.form-control {
   color: var(--accent-emerald);
   font-weight: 600;
   text-decoration: none;
-  transition: all var(--transition-fast);
+  cursor: pointer;
+  position: relative;
+  transition: color var(--transition-fast);
   display: inline-block;
 }
 
-.developer-link:hover {
-  color: #00E6AB;
-  text-decoration: underline;
-  transform: translateY(-1px);
+.developer-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #00F5B8;
+  transition: width var(--transition-fast);
+}
+
+.developer-link:hover,
+.developer-link:focus {
+  color: #00F5B8;
+  text-decoration: none;
+}
+
+.developer-link:hover::after,
+.developer-link:focus::after {
+  width: 100%;
+}
+
+.developer-link:focus-visible {
+  outline: 2px solid var(--accent-emerald);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 @media (max-width: 768px) {
