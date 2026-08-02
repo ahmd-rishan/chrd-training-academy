@@ -1,14 +1,45 @@
-/* CHRD Training Academy - Gallery Lightbox & Filter Script */
+/* CHRD Training Academy - Gallery Filter & Lightbox Controller */
 
 document.addEventListener('DOMContentLoaded', () => {
   const galleryFilterBtns = document.querySelectorAll('.gallery-filter-btn');
   const galleryItems = document.querySelectorAll('.gallery-item');
+  const galleryEmptyState = document.getElementById('galleryEmptyState');
+  const galleryGrid = document.querySelector('.gallery-grid');
   const lightboxModal = document.getElementById('lightboxModal');
   const lightboxImage = document.getElementById('lightboxImage');
   const lightboxCaption = document.getElementById('lightboxCaption');
   const lightboxClose = document.getElementById('lightboxClose');
 
-  if (galleryFilterBtns.length > 0 && galleryItems.length > 0) {
+  function updateGalleryFilter(filter) {
+    let visibleCount = 0;
+
+    galleryItems.forEach(item => {
+      const img = item.querySelector('img');
+      const itemCategory = item.getAttribute('data-category');
+
+      // Only display items that contain an actual <img> tag
+      if (img && (filter === 'all' || itemCategory === filter)) {
+        item.style.display = 'block';
+        visibleCount++;
+      } else {
+        item.style.display = 'none';
+      }
+    });
+
+    // Handle Empty State display
+    if (galleryEmptyState) {
+      if (visibleCount === 0) {
+        galleryEmptyState.style.display = 'block';
+        if (galleryGrid) galleryGrid.style.display = 'none';
+      } else {
+        galleryEmptyState.style.display = 'none';
+        if (galleryGrid) galleryGrid.style.display = 'grid';
+      }
+    }
+  }
+
+  // Bind category filter buttons
+  if (galleryFilterBtns.length > 0) {
     galleryFilterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         galleryFilterBtns.forEach(b => b.classList.remove('btn-primary'));
@@ -17,26 +48,23 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.classList.add('btn-primary');
 
         const filter = btn.getAttribute('data-filter');
-
-        galleryItems.forEach(item => {
-          if (filter === 'all' || item.getAttribute('data-category') === filter) {
-            item.style.display = 'block';
-          } else {
-            item.style.display = 'none';
-          }
-        });
+        updateGalleryFilter(filter);
       });
     });
+
+    // Initial check on load
+    updateGalleryFilter('all');
   }
 
-  // Lightbox click handler
+  // Lightbox click handler (Click real image to view full screen modal)
   galleryItems.forEach(item => {
     item.addEventListener('click', () => {
       const img = item.querySelector('img');
-      const caption = item.querySelector('.gallery-overlay h4')?.innerText || 'CHRD Training Academy Campus';
       if (img && lightboxModal && lightboxImage) {
         lightboxImage.src = img.src;
-        if (lightboxCaption) lightboxCaption.innerText = caption;
+        if (lightboxCaption) {
+          lightboxCaption.innerText = img.alt || 'CHRD Training Academy';
+        }
         lightboxModal.classList.add('active');
         document.body.style.overflow = 'hidden';
       }

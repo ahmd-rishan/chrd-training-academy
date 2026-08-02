@@ -61,84 +61,28 @@
     <div class="container">
       <div class="gallery-grid">
 
-        <!-- Item 1 -->
-        <div class="gallery-item reveal fade-up" data-category="classrooms">
-          <svg class="gallery-img" width="100%" height="100%" viewBox="0 0 400 300" preserveAspectRatio="none">
-            <rect width="400" height="300" fill="#131D36"/>
-            <circle cx="200" cy="150" r="100" fill="#00C896" opacity="0.25"/>
-            <text x="50%" y="50%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="22" font-weight="700">Montessori Apparatus Room</text>
-          </svg>
-          <div class="gallery-overlay">
-            <h4 style="color: white;">Hands-on Montessori Practice</h4>
-            <span style="font-size: 0.85rem; color: #CBD5E1;">Classroom Session</span>
-          </div>
+        <!-- Item 1 (Official Event Presentation Photo) -->
+        <div class="gallery-item reveal fade-up" data-category="events">
+          <img src="assets/gallery-chrd-banner.jpg" alt="CHRD Training Academy Official Presentation & Unveiling" class="gallery-img" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
         </div>
 
-        <!-- Item 2 -->
-        <div class="gallery-item reveal fade-up stagger-1" data-category="workshops">
-          <svg class="gallery-img" width="100%" height="100%" viewBox="0 0 400 300" preserveAspectRatio="none">
-            <rect width="400" height="300" fill="#131D36"/>
-            <circle cx="200" cy="150" r="100" fill="#7C5CFF" opacity="0.25"/>
-            <text x="50%" y="50%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="22" font-weight="700">Digital Marketing Campaign</text>
-          </svg>
-          <div class="gallery-overlay">
-            <h4 style="color: white;">Live Campaign Lab</h4>
-            <span style="font-size: 0.85rem; color: #CBD5E1;">Practical Project</span>
-          </div>
-        </div>
+      </div>
 
-        <!-- Item 3 -->
-        <div class="gallery-item reveal fade-up stagger-2" data-category="events">
-          <svg class="gallery-img" width="100%" height="100%" viewBox="0 0 400 300" preserveAspectRatio="none">
-            <rect width="400" height="300" fill="#131D36"/>
-            <circle cx="200" cy="150" r="100" fill="#00C896" opacity="0.25"/>
-            <text x="50%" y="50%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="22" font-weight="700">Annual Convocation Day</text>
+      <!-- Gallery Empty State Container (Displayed when a category has 0 uploaded photos) -->
+      <div id="galleryEmptyState" style="display: none; background: var(--card-bg); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: clamp(2.5rem, 5vw, 4rem); text-align: center; max-width: 650px; margin: 1rem auto 0 auto; box-shadow: var(--shadow-lg);" class="reveal fade-up">
+        <div style="width: 70px; height: 70px; background: rgba(0, 200, 150, 0.08); border: 1px solid var(--accent-emerald); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem auto;">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#00C896" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
           </svg>
-          <div class="gallery-overlay">
-            <h4 style="color: white;">Certificate Distribution Ceremony</h4>
-            <span style="font-size: 0.85rem; color: #CBD5E1;">Graduation Day</span>
-          </div>
         </div>
-
-        <!-- Item 4 -->
-        <div class="gallery-item reveal fade-up" data-category="classrooms">
-          <svg class="gallery-img" width="100%" height="100%" viewBox="0 0 400 300" preserveAspectRatio="none">
-            <rect width="400" height="300" fill="#131D36"/>
-            <circle cx="200" cy="150" r="100" fill="#7C5CFF" opacity="0.25"/>
-            <text x="50%" y="50%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="22" font-weight="700">Legal Documentation Lab</text>
-          </svg>
-          <div class="gallery-overlay">
-            <h4 style="color: white;">Legal Drafting & Research Lab</h4>
-            <span style="font-size: 0.85rem; color: #CBD5E1;">Legal Studies</span>
-          </div>
-        </div>
-
-        <!-- Item 5 -->
-        <div class="gallery-item reveal fade-up stagger-1" data-category="workshops">
-          <svg class="gallery-img" width="100%" height="100%" viewBox="0 0 400 300" preserveAspectRatio="none">
-            <rect width="400" height="300" fill="#131D36"/>
-            <circle cx="200" cy="150" r="100" fill="#00C896" opacity="0.25"/>
-            <text x="50%" y="50%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="22" font-weight="700">Office Admin Computer Suite</text>
-          </svg>
-          <div class="gallery-overlay">
-            <h4 style="color: white;">Corporate Office Workshop</h4>
-            <span style="font-size: 0.85rem; color: #CBD5E1;">Executive Secretarial</span>
-          </div>
-        </div>
-
-        <!-- Item 6 -->
-        <div class="gallery-item reveal fade-up stagger-2" data-category="events">
-          <svg class="gallery-img" width="100%" height="100%" viewBox="0 0 400 300" preserveAspectRatio="none">
-            <rect width="400" height="300" fill="#131D36"/>
-            <circle cx="200" cy="100" r="100" fill="#7C5CFF" opacity="0.25"/>
-            <text x="50%" y="50%" text-anchor="middle" fill="#F8FAFC" font-family="Space Grotesk" font-size="22" font-weight="700">Legal Practice Seminar</text>
-          </svg>
-          <div class="gallery-overlay">
-            <h4 style="color: white;">Legal Ethics & Drafting Workshop</h4>
-            <span style="font-size: 0.85rem; color: #CBD5E1;">Student Activity</span>
-          </div>
-        </div>
-
+        <h3 style="font-size: clamp(1.25rem, 2vw, 1.6rem); color: var(--text-primary); margin-bottom: 0.75rem; font-family: var(--font-heading);">
+          No Photos Available Yet
+        </h3>
+        <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem; margin: 0;">
+          Photos will appear here once new event and campus activities are uploaded. Stay connected with CHRD Training Academy for future updates.
+        </p>
       </div>
     </div>
   </section>
