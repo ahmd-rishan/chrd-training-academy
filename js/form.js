@@ -47,6 +47,39 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 1500);
     });
   }
+
+  // 2. International Admissions Enquiry Form Handler
+  const intlForm = document.getElementById('intlAdmissionsForm');
+  if (intlForm) {
+    intlForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('intlName')?.value.trim();
+      const phone = document.getElementById('intlPhone')?.value.trim();
+      const email = document.getElementById('intlEmail')?.value.trim();
+      const qual = document.getElementById('intlQualification')?.value.trim();
+      const country = document.getElementById('intlCountry')?.value;
+      const programme = document.getElementById('intlProgramme')?.value;
+      const message = document.getElementById('intlMessage')?.value.trim();
+
+      if (!name || !phone) {
+        showToast('Please provide your name and phone number so our counselor can reach you.', 'error');
+        return;
+      }
+
+      // Format WhatsApp message for International Admissions
+      const whatsappText = `🌍 *International Admissions Enquiry - CHRD Training Academy*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Email:* ${encodeURIComponent(email || 'N/A')}%0A*Qualification:* ${encodeURIComponent(qual || 'N/A')}%0A*Preferred Country:* ${encodeURIComponent(country || 'Not Specified')}%0A*Preferred Programme:* ${encodeURIComponent(programme || 'Not Specified')}%0A*Message:* ${encodeURIComponent(message || 'I would like to request free international admission counselling.')}`;
+
+      const whatsappURL = `https://wa.me/919745900084?text=${whatsappText}`;
+
+      intlForm.reset();
+      showToast('Thank you! Your International Admissions enquiry has been submitted. Connecting to WhatsApp...', 'success');
+
+      setTimeout(() => {
+        window.open(whatsappURL, '_blank');
+      }, 1500);
+    });
+  }
 });
 
 // Global Toast Notification Helper

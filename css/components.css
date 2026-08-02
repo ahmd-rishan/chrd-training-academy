@@ -1352,6 +1352,7 @@ textarea.form-control {
   box-sizing: border-box;
 }
 
+
 @media (max-width: 768px) {
   .footer-bottom {
     flex-direction: column !important;
@@ -1410,6 +1411,320 @@ textarea.form-control {
     font-size: 0.85rem !important;
     margin: 0 !important;
   }
+}
+
+/* ==========================================================================
+   International Admissions Section & Page Components
+   Design System: Midnight Indigo (#0B1120) + Emerald (#00C896) + Purple (#7C5CFF)
+   ========================================================================== */
+
+/* Country Cards System */
+.country-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+}
+
+.country-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-emerald), var(--accent-purple));
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.country-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 200, 150, 0.4);
+  box-shadow: 0 16px 36px rgba(0, 200, 150, 0.18);
+}
+
+.country-card:hover::before {
+  opacity: 1;
+}
+
+.country-flag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.country-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 0.25rem;
+  margin-bottom: 0.1rem;
+}
+
+.country-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.country-programs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.country-program-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  background: var(--accent-emerald-soft);
+  color: var(--accent-emerald);
+  border: 1px solid rgba(0, 200, 150, 0.2);
+}
+
+/* Feature Icon Cards (International Guidance Services) */
+.intl-feature-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  height: 100%;
+}
+
+.intl-feature-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(124, 92, 255, 0.4);
+  box-shadow: 0 12px 30px rgba(124, 92, 255, 0.2);
+}
+
+.intl-feature-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--accent-emerald-soft);
+  color: var(--accent-emerald);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+}
+
+.intl-feature-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.intl-feature-desc {
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* Program Cards (MBBS, MBA, UG, PG) */
+.intl-program-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.intl-program-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-emerald);
+  box-shadow: 0 16px 40px rgba(0, 200, 150, 0.22);
+}
+
+.intl-program-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.intl-program-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(0, 200, 150, 0.2), rgba(124, 92, 255, 0.2));
+  border: 1px solid rgba(0, 200, 150, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+}
+
+/* International Vector Hero Graphics Illustration */
+.intl-hero-illustration {
+  position: relative;
+  width: 100%;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.intl-hero-center-card {
+  background: rgba(27, 38, 69, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 200, 150, 0.35);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem 2rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 200, 150, 0.2);
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 440px;
+}
+
+.intl-floating-badge {
+  position: absolute;
+  background: rgba(19, 29, 54, 0.92);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 0.75rem 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: var(--shadow-lg);
+  z-index: 10;
+  animation: floatSlow 4s ease-in-out infinite alternate;
+}
+
+.intl-floating-badge.badge-top-right {
+  top: -15px;
+  right: -10px;
+  border-color: rgba(0, 200, 150, 0.4);
+}
+
+.intl-floating-badge.badge-bottom-left {
+  bottom: -20px;
+  left: -10px;
+  animation-delay: 2s;
+  border-color: rgba(124, 92, 255, 0.4);
+}
+
+@media (max-width: 640px) {
+  .intl-floating-badge.badge-top-right {
+    top: -25px;
+    right: 0px;
+  }
+  .intl-floating-badge.badge-bottom-left {
+    bottom: -30px;
+    left: 0px;
+  }
+}
+
+/* Admission Process Timeline Styling */
+.process-timeline-intl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1100px) {
+  .process-timeline-intl {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .process-timeline-intl {
+    grid-template-columns: 1fr;
+  }
+}
+
+.timeline-step-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  position: relative;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.timeline-step-card:hover {
+  border-color: var(--accent-emerald);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 200, 150, 0.2);
+}
+
+.timeline-step-number {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--accent-emerald-soft);
+  color: var(--accent-emerald);
+  border: 1px solid rgba(0, 200, 150, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  font-family: var(--font-heading);
+}
+
+/* Full Width International CTA Section */
+.intl-cta-banner {
+  background: linear-gradient(135deg, #131D36 0%, #1B2645 50%, #0B1120 100%);
+  border: 1px solid rgba(0, 200, 150, 0.25);
+  border-radius: var(--radius-xl);
+  padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 4vw, 3.5rem);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.intl-cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 200, 150, 0.15) 0%, transparent 65%);
+  pointer-events: none;
 }
 
 
