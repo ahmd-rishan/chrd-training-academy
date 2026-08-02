@@ -1357,3 +1357,36 @@ textarea.form-control {
     justify-content: center !important;
   }
 }
+
+/* Mobile Category Filter Bar Horizontal Scroll Optimization (<= 768px) */
+@media (max-width: 768px) {
+  .category-filter-bar {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.5rem !important;
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
+    width: calc(100% + 2rem) !important;
+    box-sizing: border-box !important;
+  }
+
+  .category-filter-bar::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .category-filter-bar .btn,
+  .category-filter-bar button {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+}
+
