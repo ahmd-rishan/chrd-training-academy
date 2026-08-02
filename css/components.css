@@ -1333,6 +1333,86 @@ textarea.form-control {
   box-sizing: border-box;
 }
 
+/* Course Details Modal CTA Footer Layout */
+.course-modal-footer {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.course-modal-footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.course-modal-footer-badge {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: block;
+}
+
+.course-modal-footer-highlight {
+  color: var(--accent-emerald);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.course-modal-cta-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 0.75rem !important;
+  }
+
+  .modal-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1.25rem 1rem !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  .course-modal-footer {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    text-align: center !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .course-modal-footer-info {
+    text-align: center !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .course-modal-cta-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    white-space: nowrap !important;
+  }
+}
+
 .modal-close {
   position: absolute;
   top: 1rem;

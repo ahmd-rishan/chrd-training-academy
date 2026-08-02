@@ -216,12 +216,12 @@ function openCourseModal(courseId) {
       ${course.careers.map(car => `<span style="background: var(--secondary-bg); border: 1px solid var(--border-subtle); padding: 0.4rem 0.85rem; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 600; color: var(--text-primary);">${car}</span>`).join('')}
     </div>
 
-    <div style="border-top: 1px solid var(--border-subtle); padding-top: 1.5rem; display: flex; gap: 1rem; align-items: center; justify-content: space-between;" class="hero-actions">
-      <div>
-        <span style="font-size: 0.85rem; color: var(--text-muted); display: block;">Admissions Open for Next Batch</span>
-        <strong style="color: var(--accent-emerald);">Free Admission Counselling Included</strong>
+    <div class="course-modal-footer">
+      <div class="course-modal-footer-info">
+        <span class="course-modal-footer-badge">Admissions Open for Next Batch</span>
+        <strong class="course-modal-footer-highlight">Free Admission Counselling Included</strong>
       </div>
-      <a href="contact.html?course=${encodeURIComponent(course.name)}" class="btn btn-primary btn-lg">Apply for Course →</a>
+      <a href="contact.html?course=${encodeURIComponent(course.name)}" class="btn btn-primary btn-lg course-modal-cta-btn">Apply Now →</a>
     </div>
   `;
 
