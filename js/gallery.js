@@ -56,14 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
     updateGalleryFilter('all');
   }
 
-  // Lightbox click handler (Click real image to view full screen modal)
+  // Lightbox click handler (Click real image to view full screen modal without text/captions)
   galleryItems.forEach(item => {
     item.addEventListener('click', () => {
       const img = item.querySelector('img');
       if (img && lightboxModal && lightboxImage) {
         lightboxImage.src = img.src;
         if (lightboxCaption) {
-          lightboxCaption.innerText = img.alt || 'CHRD Training Academy';
+          lightboxCaption.innerText = '';
+          lightboxCaption.style.display = 'none';
         }
         lightboxModal.classList.add('active');
         document.body.style.overflow = 'hidden';
