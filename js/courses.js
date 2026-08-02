@@ -3,25 +3,48 @@
 
 const coursesData = [
   {
-    id: "montessori-ttc",
-    name: "Pre-Primary & Montessori TTC",
+    id: "pre-primary-ttc",
+    name: "Pre-Primary TTC",
     category: "teacher-training",
     badge: "Most Popular",
     duration: "1 Year",
-    mode: "Online / Offline",
+    mode: "Online & Offline",
     eligibility: "SSLC / Plus Two / Any Degree",
-    shortDesc: "Globally recognized early-childhood teaching method with comprehensive classroom practice and child psychology.",
-    fullDesc: "The Pre-Primary & Montessori Teacher Training Course at CHRD Training Academy prepares aspiring educators for rewarding careers in early childhood education. Certified under ISO 9001:2015 standards, the curriculum integrates modern Montessori apparatus training, child psychology, lesson planning, and practical classroom internships.",
+    shortDesc: "Comprehensive early childhood teacher training preparing educators for pre-primary school instruction and child development.",
+    fullDesc: "The Pre-Primary Teacher Training Course at CHRD Training Academy prepares aspiring educators for rewarding careers in early childhood education. Certified under ISO 9001:2015 standards, the curriculum integrates early childhood psychology, modern teaching methodology, lesson planning, and practical classroom internships.",
+    internship: "Students will undergo a 15-day offline practical internship to gain real classroom teaching experience under expert guidance, helping them develop confidence and practical teaching skills.",
     modules: [
-      "Montessori Philosophy & Methodology",
-      "Child Psychology & Development Stages",
-      "Sensorial & Practical Life Exercises",
-      "Language & Mathematics Apparatus Training",
-      "School Administration & Classroom Management",
+      "Pre-Primary Teaching Methodology",
+      "Child Psychology & Early Development",
+      "Lesson Planning & Classroom Management",
+      "Activity-Based Learning & Teaching Aids",
+      "School Administration & Child Safety",
       "Supervised Classroom Internship"
     ],
-    careers: ["Montessori Teacher", "Pre-Primary Educator", "Kindergarten Supervisor", "Daycare Founder", "Academic Coordinator"],
+    careers: ["Pre-Primary Teacher", "Kindergarten Educator", "Daycare Supervisor", "Academic Assistant", "School Administration Staff"],
     certification: "ISO 9001:2015 Certified & University Approved Diploma"
+  },
+  {
+    id: "montessori-ttc",
+    name: "Montessori TTC",
+    category: "teacher-training",
+    badge: "High Demand",
+    duration: "1 Year",
+    mode: "Online & Offline",
+    eligibility: "SSLC / Plus Two / Any Degree",
+    shortDesc: "Globally recognized Montessori early-childhood teaching method with comprehensive classroom apparatus practice.",
+    fullDesc: "The Montessori Teacher Training Course at CHRD Training Academy prepares educators in authentic Montessori apparatus training, child psychology, sensorial life exercises, and specialized classroom management.",
+    internship: "Students will undergo a 15-day offline practical internship to gain real classroom teaching experience under expert guidance, helping them develop confidence and practical teaching skills.",
+    modules: [
+      "Montessori Philosophy & Methodology",
+      "Sensorial & Practical Life Exercises",
+      "Language & Mathematics Apparatus Training",
+      "Child Psychology & Individualized Learning",
+      "Montessori Classroom Setup & Environment",
+      "Supervised Apparatus Internship"
+    ],
+    careers: ["Montessori Teacher", "Montessori School Directress", "Kindergarten Coordinator", "Daycare Founder", "Montessori Educator"],
+    certification: "ISO 9001:2015 Certified Montessori Diploma"
   },
   {
     id: "arabic-primary-ttc",
@@ -29,10 +52,11 @@ const coursesData = [
     category: "teacher-training",
     badge: "Specialized",
     duration: "6 Months",
-    mode: "Online / Offline",
+    mode: "Online & Offline",
     eligibility: "Plus Two or Equivalent",
     shortDesc: "Pedagogical methodology, phonetics, grammar, and modern classroom delivery for Arabic educators.",
     fullDesc: "Designed for language enthusiasts and educators aiming to teach Arabic in schools and institutions. Covers Arabic phonetics, grammar instruction techniques, curriculum planning, and interactive classroom teaching strategies.",
+    internship: "Students will undergo a 15-day offline practical internship to gain real classroom teaching experience under expert guidance, helping them develop confidence and practical teaching skills.",
     modules: [
       "Arabic Language Structure & Applied Grammar",
       "Phonetics & Pronunciation Mastery",
@@ -46,24 +70,33 @@ const coursesData = [
   },
   {
     id: "digital-marketing",
-    name: "Digital Marketing Masterclass",
+    name: "AI Integrated Digital Marketing",
     category: "professional",
-    badge: "High Demand",
-    duration: "3 Months",
-    mode: "Online / Offline",
+    badge: "AI Powered",
+    duration: "5 Months",
+    mode: "Online & Offline",
     eligibility: "Plus Two / Graduate",
-    shortDesc: "Master SEO, social media marketing, Google Ads, website building, and analytics through live campaigns.",
-    fullDesc: "Get job-ready with hands-on digital marketing training. You'll run live ad campaigns, build optimized websites, perform SEO audits, and manage real social media brands under industry mentor supervision.",
+    shortDesc: "Learn modern digital marketing using AI-powered tools, SEO, Meta & Google Ads, prompt engineering, and automation.",
+    fullDesc: "Learn modern digital marketing using AI-powered tools and practical strategies. The programme covers SEO, Social Media Marketing, Google Ads, Meta Ads, Website Development, Content Marketing, Email Marketing, Analytics, AI Productivity Tools, Prompt Engineering, and Automation through live practical sessions.",
     modules: [
-      "Search Engine Optimization (SEO) & Keyword Strategy",
-      "Social Media Marketing (Meta, Instagram, LinkedIn Ads)",
-      "Google Search Ads & Display Campaigns",
-      "Content Marketing & Copywriting Fundamentals",
-      "WordPress Website Setup & Landing Pages",
-      "Google Analytics 4 & Performance Reporting"
+      "AI Tools for Marketing",
+      "Search Engine Optimization (SEO)",
+      "Social Media Marketing",
+      "Meta Ads",
+      "Google Ads",
+      "Website Development",
+      "WordPress",
+      "Content Marketing",
+      "Email Marketing",
+      "Google Analytics",
+      "Prompt Engineering",
+      "Marketing Automation",
+      "Live Projects",
+      "Placement Assistance",
+      "Industry Certification"
     ],
-    careers: ["Digital Marketing Executive", "SEO Specialist", "Social Media Manager", "PPC Campaign Specialist", "Freelancer"],
-    certification: "CHRD Professional Digital Marketer Certification + Google Badges Prep"
+    careers: ["Digital Marketing Executive", "SEO Specialist", "Performance Marketer", "Social Media Manager", "Content Strategist", "Google Ads Specialist", "Meta Ads Specialist", "AI Marketing Specialist", "Freelancer", "Entrepreneur"],
+    certification: "CHRD Professional AI Digital Marketer Certification + Google Badges Prep"
   },
   {
     id: "hospital-administration",
@@ -87,48 +120,6 @@ const coursesData = [
     certification: "CHRD Diploma in Hospital Administration"
   },
   {
-    id: "accounting-tally",
-    name: "Practical Accounting with Tally & GST",
-    category: "professional",
-    badge: "Industry Preferred",
-    duration: "4 Months",
-    mode: "Offline",
-    eligibility: "Plus Two (Commerce preferred) / Graduate",
-    shortDesc: "Hands-on business bookkeeping, Tally Prime, GST filing, TDS, and corporate financial accounting.",
-    fullDesc: "Master practical accounting with real business case studies. Learn to maintain company ledgers, prepare balance sheets, generate GST returns, and handle payroll systems.",
-    modules: [
-      "Financial Accounting Principles & Journal Entries",
-      "Tally Prime Complete Hands-on Module",
-      "Goods & Services Tax (GST) Portal & Filing",
-      "TDS & Income Tax Basics",
-      "Payroll & Employee Benefit Accounting",
-      "Auditing Preparation & Financial Reporting"
-    ],
-    careers: ["Junior Accountant", "Tally Operator", "GST Practitioner Assistant", "Accounts Executive", "Billing Officer"],
-    certification: "CHRD Certified Accounting Professional"
-  },
-  {
-    id: "spoken-english",
-    name: "Spoken English & Personality Development",
-    category: "languages",
-    badge: "Skill Booster",
-    duration: "2 Months",
-    mode: "Online / Offline",
-    eligibility: "Open to All",
-    shortDesc: "Speak fluently and confidently in job interviews, professional workplaces, and daily conversations.",
-    fullDesc: "Overcome fear and hesitation in English speaking. Interactive accent neutralization, vocabulary building, interview simulation, group discussions, and public speaking practice.",
-    modules: [
-      "Fluency Building & Vocabulary Expansion",
-      "Practical Grammar & Everyday Sentence Framing",
-      "Accent Neutralization & Pronunciation",
-      "Public Speaking & Presentation Skills",
-      "Job Interview Preparation & Mock Interviews",
-      "Corporate Etiquette & Email Writing"
-    ],
-    careers: ["Customer Success Representative", "Front Office Executive", "Corporate Communicator", "Interview Readiness"],
-    certification: "CHRD Spoken English Proficiency Certificate"
-  },
-  {
     id: "office-administration",
     name: "Office Administration & Executive Secretarial",
     category: "professional",
@@ -150,88 +141,26 @@ const coursesData = [
     certification: "CHRD Office Administration Certificate"
   },
   {
-    id: "fashion-designing",
-    name: "Fashion Designing & Garment Construction",
-    category: "vocational",
-    badge: "Creative Stream",
+    id: "legal-assistant",
+    name: "Legal Assistant",
+    category: "legal-studies",
+    badge: "New Program",
     duration: "6 Months",
-    mode: "Offline",
-    eligibility: "SSLC / Plus Two",
-    shortDesc: "Pattern drafting, garment stitching, illustration, draping, and boutique management skills.",
-    fullDesc: "Turn creativity into a career. Comprehensive vocational course covering fashion illustration, fabric selection, custom drafting, sewing techniques, and starting your own design boutique.",
+    mode: "Online & Offline",
+    eligibility: "Plus Two Students / Graduates / Job Seekers / Professionals seeking legal administration careers",
+    shortDesc: "Develop practical legal and administrative skills required to support advocates, law firms, legal departments, and corporate organizations.",
+    fullDesc: "Develop practical legal and administrative skills required to support advocates, law firms, legal departments, and corporate organizations. Learn legal documentation, drafting, office procedures, client communication, legal research, and professional ethics through practical training.",
     modules: [
-      "Fashion Illustration & Color Theory",
-      "Pattern Drafting & Grading Techniques",
-      "Garment Construction & Stitching Practice",
-      "Embroidery & Surface Ornamentation",
-      "Fabric Science & Textile Care",
-      "Boutique Management & Fashion Marketing"
+      "Practical Legal Documentation",
+      "Legal Drafting & Office Procedures",
+      "Client Communication Skills",
+      "Legal Research Basics",
+      "Court & Office Administration",
+      "Industry-Oriented Practical Training",
+      "Certificate on Successful Completion"
     ],
-    careers: ["Fashion Designer", "Boutique Owner", "Pattern Maker", "Fashion Illustrator", "Garment Stylist"],
-    certification: "CHRD Vocational Certificate in Fashion Design"
-  },
-  {
-    id: "graphic-designing",
-    name: "Graphic Designing & Brand Identity",
-    category: "professional",
-    badge: "Creative Tech",
-    duration: "4 Months",
-    mode: "Offline / Online",
-    eligibility: "Plus Two / Any Stream",
-    shortDesc: "Design stunning graphics, brand logos, marketing collateral, and UI mockups using industry standard software.",
-    fullDesc: "Master Photoshop, Illustrator, Canva, and Figma. Build an impressive portfolio of real brand projects, social media assets, posters, and print media.",
-    modules: [
-      "Design Principles, Layout & Typography",
-      "Adobe Photoshop: Image Editing & Manipulation",
-      "Adobe Illustrator: Vector Art & Logo Design",
-      "Social Media Content & Ad Banner Design",
-      "Print Media: Brochures, Flyers & Banners",
-      "Portfolio Building & Freelance Guidance"
-    ],
-    careers: ["Graphic Designer", "Brand Identity Specialist", "UI/UX Assistant", "Social Media Visual Artist", "Freelance Designer"],
-    certification: "CHRD Graphic Design Specialist Certification"
-  },
-  {
-    id: "computer-courses",
-    name: "Essential Computer Skills & MS Office",
-    category: "languages",
-    badge: "Foundational",
-    duration: "2 Months",
-    mode: "Online / Offline",
-    eligibility: "Open to All Learners",
-    shortDesc: "Master operating systems, MS Word, Excel, PowerPoint, internet security, and typing speed.",
-    fullDesc: "A complete computer literacy program ensuring proficiency in modern workplace software, file handling, cloud storage, spreadsheet formulas, and online security.",
-    modules: [
-      "Computer Hardware & Windows Fundamentals",
-      "MS Word: Document Formatting & Reports",
-      "MS Excel: Formulas, Charts & Data Tables",
-      "MS PowerPoint: Slide Presentations",
-      "Internet Research, Email & Cloud Tools",
-      "Keyboarding Speed & Cyber Safety Basics"
-    ],
-    careers: ["Data Entry Operator", "Computer Lab Assistant", "Office Assistant", "General Computer User"],
-    certification: "CHRD Certificate in Computer Applications"
-  },
-  {
-    id: "language-courses",
-    name: "Global Language Academy (German / Arabic / French)",
-    category: "languages",
-    badge: "Abroad Ready",
-    duration: "3 Months",
-    mode: "Online / Offline",
-    eligibility: "Open to Students & Job Seekers",
-    shortDesc: "Learn foreign languages for higher studies, healthcare opportunities, and overseas employment.",
-    fullDesc: "Structured language learning modules for German (A1/A2), Conversational Arabic, and French. Focuses on speaking fluency, grammar fundamentals, and embassy exam orientation.",
-    modules: [
-      "Phonetics, Script & Basic Pronunciation",
-      "Essential Everyday Vocabulary & Phrases",
-      "Grammar Framework & Sentence Construction",
-      "Listening Comprehension & Audio Drills",
-      "Cultural Context & Conversational Practice",
-      "Certification Exam Orientation"
-    ],
-    careers: ["Overseas Healthcare/Job Applicant", "Language Interpreter Assistant", "Embassy Exam Preparation"],
-    certification: "CHRD Foreign Language Certification"
+    careers: ["Legal Assistant", "Advocate Office Assistant", "Legal Clerk", "Court Office Assistant", "Corporate Legal Executive", "Documentation Executive"],
+    certification: "CHRD Legal Assistant Professional Certificate (ISO 9001:2015 Approved)"
   }
 ];
 
@@ -252,6 +181,15 @@ function openCourseModal(courseId) {
       <h2 style="margin-top: 0.75rem; margin-bottom: 0.5rem; color: var(--text-primary);">${course.name}</h2>
       <p style="color: var(--text-secondary); font-size: 1.05rem;">${course.fullDesc}</p>
     </div>
+
+    ${course.internship ? `
+      <div style="background: var(--secondary-bg); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--accent-emerald); margin-bottom: 1.5rem;">
+        <h4 style="margin-bottom: 0.5rem; color: var(--accent-emerald); display: flex; align-items: center; gap: 0.5rem;">
+          <span>🏫</span> Practical Training — 15 Days Offline Internship
+        </h4>
+        <p style="font-size: 0.95rem; margin: 0; color: var(--text-secondary); line-height: 1.6;">${course.internship}</p>
+      </div>
+    ` : ''}
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;" class="grid-cols-2">
       <div style="background: var(--secondary-bg); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
