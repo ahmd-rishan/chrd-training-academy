@@ -1423,12 +1423,41 @@ textarea.form-control {
   box-sizing: border-box;
 }
 
+.developer-credit {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+  line-height: 1.4;
+}
+
+.developer-link {
+  color: var(--accent-emerald);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  display: inline-block;
+}
+
+.developer-link:hover {
+  color: #00E6AB;
+  text-decoration: underline;
+  transform: translateY(-1px);
+}
 
 @media (max-width: 768px) {
   .footer-bottom {
     flex-direction: column !important;
     text-align: center !important;
     justify-content: center !important;
+    align-items: center !important;
+    gap: 1.25rem !important;
+  }
+
+  .footer-bottom > div {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
 }
 
