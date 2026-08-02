@@ -15,24 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileToggle = document.querySelector('.mobile-toggle');
   const navMenu = document.querySelector('.nav-menu');
 
-  // Create mobile nav backdrop element inside site-header if header exists
+  // Create mobile nav backdrop element directly appended to document.body
   let navBackdrop = document.querySelector('.nav-backdrop');
-  if (!navBackdrop && header) {
+  if (!navBackdrop) {
     navBackdrop = document.createElement('div');
     navBackdrop.className = 'nav-backdrop';
-    navBackdrop.style.cssText = `
-      position: fixed;
-      inset: 0;
-      background: rgba(11, 17, 32, 0.85);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      z-index: 2400;
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-    `;
-    header.appendChild(navBackdrop);
+    document.body.appendChild(navBackdrop);
   }
 
   function toggleMobileNav(show) {
@@ -40,22 +28,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const shouldOpen = show !== undefined ? show : !navMenu.classList.contains('open');
     if (shouldOpen) {
       navMenu.classList.add('open');
+      if (header) header.classList.add('menu-open');
+      document.body.classList.add('menu-open');
+      document.documentElement.classList.add('menu-open');
       if (navBackdrop) {
+        navBackdrop.classList.add('active');
         navBackdrop.style.opacity = '1';
         navBackdrop.style.visibility = 'visible';
         navBackdrop.style.pointerEvents = 'auto';
       }
       if (mobileToggle) mobileToggle.innerHTML = '✕';
-      document.body.style.overflow = 'hidden';
     } else {
       navMenu.classList.remove('open');
+      if (header) header.classList.remove('menu-open');
+      document.body.classList.remove('menu-open');
+      document.documentElement.classList.remove('menu-open');
       if (navBackdrop) {
+        navBackdrop.classList.remove('active');
         navBackdrop.style.opacity = '0';
         navBackdrop.style.visibility = 'hidden';
         navBackdrop.style.pointerEvents = 'none';
       }
       if (mobileToggle) mobileToggle.innerHTML = '☰';
-      document.body.style.overflow = '';
     }
   }
 
