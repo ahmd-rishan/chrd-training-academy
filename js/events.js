@@ -652,6 +652,269 @@ function copyWhatsAppMessage() {
   }
 }
 
+let activeGeneralModalEscListener = null;
+
+// Open General Event Enquiry Popup Modal (Independent Component)
+function openGeneralEventEnquiryModal() {
+  let modal = document.getElementById('generalEventEnquiryModal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'generalEventEnquiryModal';
+    modal.className = 'event-modal-overlay';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-labelledby', 'generalModalTitle');
+    document.body.appendChild(modal);
+  }
+
+  const districtOptionsHtml = KERALA_DISTRICTS.map(d => `<option value="${d}">${d}</option>`).join('');
+
+  modal.innerHTML = `
+    <div class="event-modal-container" id="generalModalContainer" tabindex="-1">
+      <button class="event-modal-close" onclick="closeGeneralEventEnquiryModal()" aria-label="Close modal">✕</button>
+
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <span class="badge badge-purple" style="margin-bottom: 0.5rem; display: inline-block;">General Enquiry</span>
+        <h2 id="generalModalTitle" style="color: var(--text-primary); font-size: clamp(1.4rem, 2.5vw, 1.75rem); margin: 0 0 0.35rem 0; font-weight: 800;">
+          General Event Enquiry
+        </h2>
+        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0; line-height: 1.5;">
+          Interested in an upcoming workshop, seminar, certification programme, or training course? Complete the form below and our team will contact you.
+        </p>
+      </div>
+
+      <div id="genEnquirySuccessBanner" style="display: none; background: rgba(0, 200, 150, 0.12); border: 1px solid var(--accent-emerald); border-radius: var(--radius-md); padding: 0.85rem; margin-bottom: 1.25rem; text-align: center; font-size: 0.88rem; color: var(--accent-emerald);">
+        ✓ Your enquiry has been prepared. You will now be redirected to WhatsApp.
+      </div>
+
+      <form id="generalEventEnquiryForm" onsubmit="handleGeneralEnquirySubmit(event)" novalidate>
+        
+        <!-- Full Name & Place Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;" class="grid-cols-2">
+          <div class="modal-form-group">
+            <label for="genFullName" class="modal-form-label">Full Name <span style="color: #FF6B6B;">*</span></label>
+            <input type="text" id="genFullName" class="modal-form-control" placeholder="Enter your full name">
+            <span id="err-genFullName" class="modal-error-msg"></span>
+          </div>
+
+          <div class="modal-form-group">
+            <label for="genPlace" class="modal-form-label">Place / Town <span style="color: #FF6B6B;">*</span></label>
+            <input type="text" id="genPlace" class="modal-form-control" placeholder="e.g. Vengara">
+            <span id="err-genPlace" class="modal-error-msg"></span>
+          </div>
+        </div>
+
+        <!-- District & Mobile Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;" class="grid-cols-2">
+          <div class="modal-form-group">
+            <label for="genDistrict" class="modal-form-label">District <span style="color: #FF6B6B;">*</span></label>
+            <select id="genDistrict" class="modal-form-control" style="cursor: pointer;">
+              <option value="">-- Select District --</option>
+              ${districtOptionsHtml}
+            </select>
+            <span id="err-genDistrict" class="modal-error-msg"></span>
+          </div>
+
+          <div class="modal-form-group">
+            <label for="genPhone" class="modal-form-label">Mobile Number <span style="color: #FF6B6B;">*</span></label>
+            <input type="tel" id="genPhone" class="modal-form-control" maxlength="10" placeholder="10-digit mobile number">
+            <span id="err-genPhone" class="modal-error-msg"></span>
+          </div>
+        </div>
+
+        <!-- Email & Interested Programme Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;" class="grid-cols-2">
+          <div class="modal-form-group">
+            <label for="genEmail" class="modal-form-label">Email Address <span style="color: #FF6B6B;">*</span></label>
+            <input type="email" id="genEmail" class="modal-form-control" placeholder="name@example.com">
+            <span id="err-genEmail" class="modal-error-msg"></span>
+          </div>
+
+          <div class="modal-form-group">
+            <label for="genInterested" class="modal-form-label">Interested Course / Programme <span style="font-weight: normal; color: var(--text-muted);">(Optional)</span></label>
+            <input type="text" id="genInterested" class="modal-form-control" placeholder="e.g. Public Speaking / Teacher Training">
+          </div>
+        </div>
+
+        <!-- Preferred Month -->
+        <div class="modal-form-group">
+          <label for="genMonth" class="modal-form-label">Preferred Month <span style="font-weight: normal; color: var(--text-muted);">(Optional)</span></label>
+          <input type="text" id="genMonth" class="modal-form-control" placeholder="e.g. September 2026 / October 2026">
+        </div>
+
+        <!-- Message / Enquiry -->
+        <div class="modal-form-group" style="margin-bottom: 1.5rem;">
+          <label for="genMessage" class="modal-form-label">Message / Enquiry <span style="color: #FF6B6B;">*</span></label>
+          <textarea id="genMessage" class="modal-form-control" rows="3" placeholder="I would like to know when the next Public Speaking Workshop or Teacher Training Programme will be conducted."></textarea>
+          <span id="err-genMessage" class="modal-error-msg"></span>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="genSubmitBtn" class="btn btn-primary btn-md" style="width: 100%; justify-content: center; font-weight: 700; font-size: 1rem; padding: 0.85rem;">
+          Send Enquiry →
+        </button>
+      </form>
+    </div>
+  `;
+
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+
+  const container = document.getElementById('generalModalContainer');
+  if (container) container.focus();
+
+  modal.onclick = (e) => {
+    if (e.target === modal) {
+      closeGeneralEventEnquiryModal();
+    }
+  };
+
+  if (activeGeneralModalEscListener) {
+    document.removeEventListener('keydown', activeGeneralModalEscListener);
+  }
+  activeGeneralModalEscListener = (e) => {
+    if (e.key === 'Escape') {
+      closeGeneralEventEnquiryModal();
+    }
+  };
+  document.addEventListener('keydown', activeGeneralModalEscListener);
+}
+
+// Close General Event Enquiry Modal Handler
+function closeGeneralEventEnquiryModal() {
+  const modal = document.getElementById('generalEventEnquiryModal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  if (activeGeneralModalEscListener) {
+    document.removeEventListener('keydown', activeGeneralModalEscListener);
+    activeGeneralModalEscListener = null;
+  }
+}
+
+// General Event Enquiry Form Submission Handler
+function handleGeneralEnquirySubmit(event) {
+  event.preventDefault();
+
+  // Clear previous errors
+  ['genFullName', 'genPlace', 'genDistrict', 'genPhone', 'genEmail', 'genMessage'].forEach(id => {
+    const errEl = document.getElementById(`err-${id}`);
+    if (errEl) errEl.textContent = '';
+  });
+
+  const name = document.getElementById('genFullName').value.trim();
+  const place = document.getElementById('genPlace').value.trim();
+  const district = document.getElementById('genDistrict').value;
+  const phone = document.getElementById('genPhone').value.trim();
+  const email = document.getElementById('genEmail').value.trim();
+  const interestedProgramme = document.getElementById('genInterested').value.trim();
+  const preferredMonth = document.getElementById('genMonth').value.trim();
+  const message = document.getElementById('genMessage').value.trim();
+
+  let hasError = false;
+
+  if (!name) {
+    document.getElementById('err-genFullName').textContent = 'Full Name is required';
+    hasError = true;
+  }
+
+  if (!place) {
+    document.getElementById('err-genPlace').textContent = 'Place / Town is required';
+    hasError = true;
+  }
+
+  if (!district) {
+    document.getElementById('err-genDistrict').textContent = 'Please select a district';
+    hasError = true;
+  }
+
+  const phoneRegex = /^[6-9]\d{9}$/;
+  if (!phone) {
+    document.getElementById('err-genPhone').textContent = 'Mobile Number is required';
+    hasError = true;
+  } else if (!phoneRegex.test(phone)) {
+    document.getElementById('err-genPhone').textContent = 'Please enter a valid 10-digit mobile number';
+    hasError = true;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!email) {
+    document.getElementById('err-genEmail').textContent = 'Email Address is required';
+    hasError = true;
+  } else if (!emailRegex.test(email)) {
+    document.getElementById('err-genEmail').textContent = 'Please enter a valid email address';
+    hasError = true;
+  }
+
+  if (!message) {
+    document.getElementById('err-genMessage').textContent = 'Message / Enquiry is required';
+    hasError = true;
+  }
+
+  if (hasError) return;
+
+  const nowTime = new Date().getTime();
+
+  // Save general enquiry record locally (modular for future backend integration)
+  const enquiryRecord = {
+    id: `GEN-ENQ-${nowTime}-${Math.floor(1000 + Math.random() * 9000)}`,
+    submittedAt: new Date().toISOString(),
+    name: name,
+    place: place,
+    district: district,
+    phone: phone,
+    email: email,
+    interestedProgramme: interestedProgramme || 'General Upcoming Programmes',
+    preferredMonth: preferredMonth || 'Flexible',
+    message: message,
+    status: 'New'
+  };
+
+  const existingEnquiries = JSON.parse(localStorage.getItem('chrd_general_enquiries') || '[]');
+  existingEnquiries.push(enquiryRecord);
+  localStorage.setItem('chrd_general_enquiries', JSON.stringify(existingEnquiries));
+
+  const submitBtn = document.getElementById('genSubmitBtn');
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+  }
+
+  const whatsappMessage = `Hello CHRD Training Academy,
+
+I would like to enquire about your upcoming programmes.
+
+Name: ${name}
+Place: ${place}
+District: ${district}
+Mobile: ${phone}
+Email: ${email}
+
+Interested Programme: ${interestedProgramme || 'General Upcoming Programmes'}
+Preferred Month: ${preferredMonth || 'Flexible'}
+
+Message:
+${message}
+
+Please inform me when registrations open.
+
+Thank you.`;
+
+  const encodedMessage = encodeURIComponent(whatsappMessage);
+  const whatsappUrl = `https://wa.me/919383442028?text=${encodedMessage}`;
+
+  const successBanner = document.getElementById('genEnquirySuccessBanner');
+  if (successBanner) {
+    successBanner.style.display = 'block';
+  }
+
+  setTimeout(() => {
+    window.open(whatsappUrl, '_blank');
+    closeGeneralEventEnquiryModal();
+  }, 700);
+}
+
 // DOM Initialization
 document.addEventListener('DOMContentLoaded', () => {
   renderUpcomingEventsGrid();
