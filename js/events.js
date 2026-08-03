@@ -166,7 +166,7 @@ function renderUpcomingEventsGrid() {
             
             <!-- Featured Image Header Section -->
             <div style="height: 220px; position: relative; overflow: hidden; border-radius: var(--radius-xl) var(--radius-xl) 0 0;">
-              <img src="${image}" alt="${title}" style="width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.4s ease;">
+              <img src="${image}" alt="${title}" draggable="false" style="width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.4s ease;">
               <div style="position: absolute; top: 1rem; left: 1rem; right: 1rem; display: flex; justify-content: space-between; align-items: center; z-index: 2;">
                 <span class="badge badge-emerald">${evt.status || 'Registration Open'}</span>
                 <span class="badge badge-white" style="font-weight: 800; font-size: 0.88rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">${feeText}</span>

@@ -81,6 +81,82 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Allow text selection in form fields */
+input,
+textarea,
+select,
+[contenteditable="true"],
+.selectable {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+}
+
+/* Disable image dragging */
+img {
+  user-drag: none;
+  -webkit-user-drag: none;
+}
+
+/* Content Protection Toast Notification */
+.cp-toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: rgba(19, 29, 54, 0.95);
+  color: #F8FAFC;
+  border: 1px solid rgba(0, 200, 150, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 200, 150, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 99999;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+}
+
+.cp-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.cp-toast-icon {
+  width: 18px;
+  height: 18px;
+  fill: #00C896;
+  flex-shrink: 0;
+}
+
+/* Disable Printing via Print Media Query */
+@media print {
+  body {
+    display: none !important;
+  }
+  html::before {
+    content: "Printing has been disabled for content protection.";
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 60px 20px;
+    color: #111827;
+  }
 }
 
 /* Fluid Typography */
