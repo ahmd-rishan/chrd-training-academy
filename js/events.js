@@ -25,7 +25,8 @@ function getOpenEvents() {
   if (typeof window !== 'undefined' && typeof window.getUpcomingEvents === 'function') {
     return window.getUpcomingEvents();
   }
-  return typeof eventsData !== 'undefined' ? eventsData : [];
+  const rawList = typeof eventsData !== 'undefined' ? eventsData : (window.eventsData || []);
+  return rawList.filter(e => e.isVisible !== false && e.status !== 'hidden');
 }
 
 // Render Upcoming Events Grid or Event Enquiry Form on events.html

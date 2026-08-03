@@ -10,6 +10,7 @@ window.eventsData = [
     badge: "Registration Open",
     registrationOpen: true,
     registration: true,
+    isVisible: false, // Visibility Flag: Set to true to show on Events page, false to hide
     date: "2026-08-28",
     displayDate: "28 August 2026",
     time: "9:00 AM – 5:00 PM",
@@ -51,7 +52,11 @@ window.getEventsData = function() {
 
 window.getUpcomingEvents = function() {
   const list = window.getEventsData();
-  return list.filter(e => e.registrationOpen === true || e.registration === true || e.status === "Registration Open" || e.status === "Upcoming");
+  return list.filter(e => {
+    const isVisible = (e.isVisible !== false) && (e.status !== 'hidden');
+    const isOpen = (e.registrationOpen === true || e.registration === true || e.status === "Registration Open" || e.status === "Upcoming");
+    return isVisible && isOpen;
+  });
 };
 
 window.getEventById = function(eventId) {
