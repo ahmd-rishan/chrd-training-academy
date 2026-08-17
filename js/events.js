@@ -155,7 +155,7 @@ function renderUpcomingEventsGrid() {
     <div class="events-grid-wrapper">
       ${events.map(evt => {
         const title = evt.title || evt.name;
-        const image = evt.poster || evt.banner || evt.image || 'assets/blog-featured.jpg';
+        const image = evt.poster || evt.banner || evt.image || 'assets/blog-featured.webp';
         const desc = evt.shortDesc || evt.description;
         const dateText = evt.displayDate || evt.date;
         const feeText = typeof evt.totalFee === 'number' ? `₹${evt.totalFee}` : evt.fee;
