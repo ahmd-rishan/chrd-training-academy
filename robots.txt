@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /test/
+Disallow: /temp/
+
+Sitemap: https://www.chrdkerala.in/sitemap.xml
