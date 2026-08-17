@@ -111,76 +111,84 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero-section" style="padding-top: clamp(7rem, 11vw, 10rem); background: radial-gradient(circle at 70% 30%, rgba(0, 200, 150, 0.12) 0%, rgba(124, 92, 255, 0.08) 40%, rgba(11, 17, 32, 1) 100%);">
-    <div class="container hero-grid">
-      <div class="hero-content reveal fade-right">
-        <div class="badge badge-emerald">
-          🌍 GLOBAL EDUCATION GUIDANCE
+  <!-- Redesigned International Admissions Hero Section -->
+  <section class="international-admissions-hero">
+    <div class="intl-hero-container">
+      
+      <!-- LEFT SIDE: Hero Content -->
+      <div class="intl-hero-content reveal fade-right">
+        <!-- Eyebrow Badge -->
+        <div class="intl-hero-eyebrow">
+          🌍 INTERNATIONAL EDUCATION
         </div>
 
-        <h1 class="hero-highlight-title" style="margin-bottom: 1.25rem;">
-          International<br>
-          <span class="gradient-text">Admissions</span>
+        <!-- Main Heading (ONLY H1 ON THIS PAGE) -->
+        <h1 class="intl-hero-title">
+          Study Abroad With<br>
+          <span class="intl-hero-accent">Expert Guidance</span>
         </h1>
 
-        <p style="font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2rem; max-width: 580px; line-height: 1.7;">
-          Professional admission guidance for students aspiring to study at leading universities around the world.
+        <!-- Concise Description -->
+        <p class="intl-hero-description">
+          Get professional admission guidance for UG, PG, MBA and MBBS programs at recognized universities across leading study destinations.
         </p>
 
-        <div class="hero-actions">
-          <a href="#enquiry-form" class="btn btn-primary btn-lg">Apply for Admission →</a>
-          <a href="https://wa.me/919745900084?text=Hello%20CHRD%20Training%20Academy,%20I%20would%20like%20to%20talk%20to%20an%20international%20admissions%20counsellor." class="btn btn-secondary btn-lg" target="_blank">Talk to a Counsellor 💬</a>
+        <!-- CTA Buttons -->
+        <div class="intl-hero-actions">
+          <a href="#countries" class="btn btn-primary intl-hero-btn-primary">Explore Study Destinations →</a>
+          <a href="https://wa.me/919745900084?text=Hello%20CHRD%20Training%20Academy,%20I%20would%20like%20to%20talk%20to%20an%20international%20admissions%20counsellor." class="btn btn-secondary intl-hero-btn-secondary" target="_blank">Talk to a Counsellor</a>
         </div>
 
-        <div class="hero-trust-bar" style="margin-top: 2.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap;">
-          <div class="trust-badge-item">
-            <span class="trust-icon">✓</span> Expert Counsellors
+        <!-- Subtle Divider -->
+        <div class="intl-hero-divider"></div>
+
+        <!-- Trust Indicators -->
+        <div class="intl-hero-trust-bar">
+          <div class="intl-trust-item">
+            <span class="intl-trust-icon">✓</span>
+            <span class="intl-trust-text">7+ Countries Supported</span>
           </div>
-          <div class="trust-badge-item">
-            <span class="trust-icon">✓</span> 7+ Countries Supported
+          <div class="intl-trust-item">
+            <span class="intl-trust-icon">✓</span>
+            <span class="intl-trust-text">University Application Assistance</span>
           </div>
-          <div class="trust-badge-item">
-            <span class="trust-icon">✓</span> Complete Visa Guidance
+          <div class="intl-trust-item">
+            <span class="intl-trust-icon">✓</span>
+            <span class="intl-trust-text">Visa & Documentation Guidance</span>
           </div>
         </div>
       </div>
 
-      <!-- Custom Hero Media Visual Container -->
-      <div class="hero-media-wrapper reveal fade-left stagger-2">
-        <div class="intl-hero-illustration">
+      <!-- RIGHT SIDE: Main Visual Image Container & Floating UI Cards -->
+      <div class="intl-hero-media-wrapper reveal fade-left stagger-2">
+        <div class="intl-hero-image-frame">
           
-          <!-- Outer Decorative Glow & Orbit Rings -->
-          <div style="position: absolute; width: 340px; height: 340px; border-radius: 50%; border: 1px dashed rgba(0, 200, 150, 0.25); animation: rotateSlow 30s linear infinite;"></div>
-          <div style="position: absolute; width: 440px; height: 440px; border-radius: 50%; border: 1px solid rgba(124, 92, 255, 0.15); pointer-events: none;"></div>
-
-          <!-- Floating Badge Top Right -->
+          <!-- Top Floating Card -->
           <div class="intl-floating-badge badge-top-right">
-            <span style="font-size: 1.5rem;">✈️</span>
-            <div>
-              <div style="font-weight: 700; font-size: 0.85rem; color: var(--accent-emerald);">Direct Application</div>
-              <div style="font-size: 0.75rem; color: var(--text-muted);">Accredited Universities</div>
+            <span class="badge-icon">✈️</span>
+            <div class="badge-text-group">
+              <div class="badge-title badge-title-teal">Direct Application</div>
+              <div class="badge-subtitle">Accredited Universities</div>
             </div>
           </div>
 
-          <!-- Center Main Card Container with Image -->
-          <div class="intl-hero-center-card">
-            <div class="intl-hero-img-box">
-              <img src="assets/international-hero.png" alt="CHRD International Admissions Guidance" class="intl-hero-img">
-            </div>
+          <!-- Main Image Frame Container -->
+          <div class="intl-hero-image-card">
+            <img src="assets/chrd_international_admissions_hero_image.png" alt="Student preparing to study abroad with international university admission guidance" class="intl-hero-img">
           </div>
 
-          <!-- Floating Badge Bottom Left -->
+          <!-- Bottom Floating Card -->
           <div class="intl-floating-badge badge-bottom-left">
-            <span style="font-size: 1.5rem;">📜</span>
-            <div>
-              <div style="font-weight: 700; font-size: 0.85rem; color: var(--accent-purple);">100% Transparent</div>
-              <div style="font-size: 0.75rem; color: var(--text-muted);">SOP & Visa Assistance</div>
+            <span class="badge-icon">📜</span>
+            <div class="badge-text-group">
+              <div class="badge-title badge-title-purple">100% Transparent</div>
+              <div class="badge-subtitle">SOP & Visa Assistance</div>
             </div>
           </div>
 
         </div>
       </div>
+
     </div>
   </section>
 
