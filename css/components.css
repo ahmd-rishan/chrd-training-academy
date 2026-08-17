@@ -1760,6 +1760,17 @@ body.menu-open .whatsapp-float {
   color: var(--accent-emerald);
 }
 
+.accordion-header h3 {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  line-height: inherit;
+  display: inline;
+}
+
 .accordion-icon {
   width: 26px;
   height: 26px;
