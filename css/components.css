@@ -64,14 +64,16 @@
   box-shadow: 0 6px 20px rgba(0, 200, 150, 0.3);
 }
 
-.btn-gold, .btn-purple {
+.btn-gold,
+.btn-purple {
   background: var(--accent-purple);
   color: #FFFFFF;
   box-shadow: 0 4px 16px rgba(124, 92, 255, 0.3);
   border-color: var(--accent-purple);
 }
 
-.btn-gold:hover, .btn-purple:hover {
+.btn-gold:hover,
+.btn-purple:hover {
   background: var(--accent-purple-hover);
   color: #FFFFFF;
   transform: translateY(-2px);
@@ -175,6 +177,16 @@
   letter-spacing: -0.01em;
 }
 
+.tm-symbol {
+  display: inline-block;
+  font-size: 0.7em;
+  font-weight: 600;
+  margin-left: 4px;
+  vertical-align: 0.25em;
+  line-height: 1;
+  color: inherit;
+}
+
 /* Responsive Logo Text Visibility: Hidden on Mobile (<768px), Visible on Tablet & Desktop (>=768px) */
 @media (max-width: 767px) {
   .site-header .logo-text {
@@ -200,7 +212,8 @@
   min-height: 44px;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
   color: var(--accent-emerald);
 }
 
@@ -216,7 +229,8 @@
   border-radius: 2px;
 }
 
-.nav-link:hover::after, .nav-link.active::after {
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 100%;
 }
 
@@ -422,7 +436,7 @@ body.menu-open .whatsapp-float {
   width: 100%;
   min-height: calc(100vh - 75px);
   background-color: #061017;
-  background-image: 
+  background-image:
     radial-gradient(circle at 12% 35%, rgba(0, 200, 150, 0.15) 0%, transparent 45%),
     radial-gradient(circle at 88% 65%, rgba(0, 200, 150, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 50% 40%, rgba(10, 25, 38, 0.8) 0%, transparent 70%);
@@ -672,12 +686,10 @@ body.menu-open .whatsapp-float {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(6, 16, 23, 0.15) 0%,
-    rgba(6, 16, 23, 0) 40%,
-    rgba(6, 16, 23, 0.8) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(6, 16, 23, 0.15) 0%,
+      rgba(6, 16, 23, 0) 40%,
+      rgba(6, 16, 23, 0.8) 100%);
   pointer-events: none;
 }
 
@@ -1603,7 +1615,9 @@ body.menu-open .whatsapp-float {
 }
 
 @media (max-width: 768px) {
-  .timeline-step, .timeline-step:nth-child(even) {
+
+  .timeline-step,
+  .timeline-step:nth-child(even) {
     flex-direction: row !important;
     padding-left: 48px !important;
     margin-bottom: 1.75rem !important;
@@ -2244,7 +2258,7 @@ textarea.form-control {
     gap: 1.25rem !important;
   }
 
-  .footer-bottom > div {
+  .footer-bottom>div {
     text-align: center !important;
     display: flex !important;
     flex-direction: column !important;
@@ -2637,22 +2651,27 @@ textarea.form-control {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+
   .events-hero-content {
     order: 1;
   }
+
   .events-hero-media-wrapper {
     order: 2;
     max-width: 550px;
     margin: 0 auto;
   }
+
   .events-hero-feature-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+
   .events-feature-divider {
     display: none;
   }
+
   .events-hero-stats-card {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
@@ -2664,52 +2683,64 @@ textarea.form-control {
     padding-top: 6rem;
     padding-bottom: 2.5rem;
   }
+
   .events-hero-title {
     font-size: 1.85rem;
   }
+
   .events-hero-description {
     font-size: 0.925rem;
     margin-bottom: 1.5rem;
   }
+
   .events-hero-actions {
     flex-direction: column;
     width: 100%;
   }
+
   .events-hero-btn-primary,
   .events-hero-btn-secondary {
     width: 100%;
     text-align: center;
     justify-content: center;
   }
+
   .events-collage-grid {
     grid-template-columns: 1fr;
     grid-template-rows: 220px 110px;
     height: auto;
   }
+
   .events-collage-stacked {
     flex-direction: row;
   }
+
   .events-collage-sub {
     width: calc(50% - 6px);
     height: 100%;
   }
+
   .events-floating-card {
     bottom: -12px;
     right: 5px;
     padding: 0.65rem 0.95rem;
     border-radius: 14px;
   }
+
   .events-floating-card-icon {
     width: 34px;
     height: 34px;
     font-size: 1.15rem;
   }
+
   .events-floating-card-title {
     font-size: 0.8rem;
   }
+
   .events-floating-card-sub {
     font-size: 0.725rem;
   }
+
   .events-hero-stats-card {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -2969,6 +3000,7 @@ textarea.form-control {
     top: -25px;
     right: 0px;
   }
+
   .intl-floating-badge.badge-bottom-left {
     bottom: -30px;
     left: 0px;
@@ -3058,6 +3090,7 @@ textarea.form-control {
    Applies to Destination Countries & Available Programs
    ========================================================================== */
 @media (max-width: 768px) {
+
   .countries-snap-carousel,
   .programs-snap-carousel {
     display: flex !important;
@@ -3365,9 +3398,12 @@ textarea.form-control {
 
 /* Floating Animation */
 @keyframes floatBadge {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-7px);
   }
@@ -3375,6 +3411,7 @@ textarea.form-control {
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
+
   .badge-top-right,
   .badge-bottom-left {
     animation: none !important;
@@ -3388,24 +3425,31 @@ textarea.form-control {
     gap: 1.75rem;
     min-height: auto;
   }
+
   .intl-hero-title {
     font-size: 2.2rem;
   }
+
   .intl-hero-description {
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
   }
+
   .intl-hero-actions {
     gap: 0.75rem;
   }
-  .intl-hero-btn-primary, .intl-hero-btn-secondary {
+
+  .intl-hero-btn-primary,
+  .intl-hero-btn-secondary {
     padding: 0.75rem 1.25rem;
     font-size: 0.9rem;
   }
+
   .badge-top-right {
     top: -12px;
     right: -5px;
   }
+
   .badge-bottom-left {
     bottom: -12px;
     left: -5px;
@@ -3417,19 +3461,23 @@ textarea.form-control {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+
   .intl-hero-content {
     order: 1;
   }
+
   .intl-hero-media-wrapper {
     order: 2;
     max-width: 550px;
     margin: 0 auto;
     padding: 1.25rem 0;
   }
+
   .badge-top-right {
     top: -12px;
     right: 0px;
   }
+
   .badge-bottom-left {
     bottom: -12px;
     left: 0px;
@@ -3441,70 +3489,89 @@ textarea.form-control {
     padding-top: 6rem;
     padding-bottom: 2.5rem;
   }
+
   .intl-hero-container {
     gap: 2rem;
   }
+
   .intl-hero-eyebrow {
     font-size: 0.775rem;
     padding: 0.4rem 0.95rem;
   }
+
   .intl-hero-title {
     font-size: 1.85rem;
     margin-bottom: 1rem;
   }
+
   .intl-hero-description {
     font-size: 0.925rem;
     margin-bottom: 1.5rem;
   }
+
   .intl-hero-actions {
     flex-direction: column;
     width: 100%;
     gap: 0.75rem;
   }
-  .intl-hero-btn-primary, .intl-hero-btn-secondary {
+
+  .intl-hero-btn-primary,
+  .intl-hero-btn-secondary {
     width: 100%;
     text-align: center;
     justify-content: center;
   }
+
   .intl-hero-divider {
     margin: 1.5rem 0 1.25rem 0;
   }
+
   .intl-hero-trust-bar {
     flex-direction: column;
     gap: 0.65rem;
   }
+
   .intl-trust-item {
     font-size: 0.875rem;
   }
+
   .intl-hero-media-wrapper {
     max-width: 100%;
     padding: 0.75rem 0;
   }
+
   .intl-hero-image-card {
     padding: 8px;
     border-radius: 26px;
   }
+
   .intl-hero-img {
     border-radius: 20px;
   }
+
   .intl-floating-badge {
     padding: 0.55rem 0.85rem;
     gap: 0.55rem;
     border-radius: 12px;
   }
+
   .badge-icon {
     font-size: 1.15rem;
   }
+
   .badge-title {
     font-size: 0.775rem;
   }
+
   .badge-subtitle {
     font-size: 0.675rem;
   }
+
   .badge-top-right {
     top: -10px;
     right: 4px;
   }
+
   .badge-bottom-left {
     bottom: -10px;
     left: 4px;
@@ -3516,20 +3583,22 @@ textarea.form-control {
     padding: 0.45rem 0.65rem;
     gap: 0.4rem;
   }
+
   .badge-title {
     font-size: 0.725rem;
   }
+
   .badge-subtitle {
     font-size: 0.625rem;
   }
+
   .badge-top-right {
     top: -8px;
     right: 2px;
   }
+
   .badge-bottom-left {
     bottom: -8px;
     left: 2px;
   }
 }
-
-
