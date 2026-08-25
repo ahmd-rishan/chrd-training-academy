@@ -2558,7 +2558,7 @@ textarea.form-control {
 
 .events-hero-stats-card {
   width: 100%;
-  padding: 1.5rem 2rem;
+  padding: 1.75rem 2rem;
   background: rgba(19, 29, 54, 0.7);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -2566,45 +2566,62 @@ textarea.form-control {
   border-radius: 24px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
-  align-items: center;
+  align-items: stretch;
+  justify-content: center;
   box-sizing: border-box;
 }
 
 .events-stat-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  text-align: center;
+  justify-content: flex-start;
+  padding: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.events-stat-item > div:not(.events-stat-icon) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .events-stat-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
   background: rgba(0, 200, 150, 0.12);
   border: 1px solid rgba(0, 200, 150, 0.25);
   color: var(--accent-emerald);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   flex-shrink: 0;
+  margin-bottom: 0.85rem;
 }
 
 .events-stat-num {
   font-family: var(--font-heading);
-  font-size: clamp(1.4rem, 2vw, 1.85rem);
+  font-size: clamp(1.6rem, 2.2vw, 2.1rem);
   font-weight: 800;
   color: var(--accent-emerald);
   line-height: 1.1;
+  margin-bottom: 0.35rem;
+  text-align: center;
 }
 
 .events-stat-label {
-  font-size: 0.825rem;
+  font-size: 0.875rem;
   color: var(--text-secondary);
   font-weight: 500;
-  line-height: 1.25;
+  line-height: 1.3;
+  text-align: center;
 }
 
 /* Category Filter Bar */
@@ -2638,13 +2655,6 @@ textarea.form-control {
 }
 
 /* Responsive Media Queries for Events Hero */
-@media (max-width: 1200px) {
-  .events-hero-stats-card {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-  }
-}
-
 @media (max-width: 900px) {
   .events-hero-container {
     grid-template-columns: 1fr;
@@ -2673,7 +2683,8 @@ textarea.form-control {
 
   .events-hero-stats-card {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+    gap: 1.5rem 1.25rem;
+    padding: 1.5rem;
   }
 }
 
@@ -2741,9 +2752,30 @@ textarea.form-control {
   }
 
   .events-hero-stats-card {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 1.25rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 0.75rem;
+    padding: 1.25rem 0.85rem;
+  }
+
+  .events-stat-item {
+    padding: 0.25rem 0;
+  }
+
+  .events-stat-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+    margin-bottom: 0.6rem;
+    border-radius: 12px;
+  }
+
+  .events-stat-num {
+    font-size: 1.45rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .events-stat-label {
+    font-size: 0.8rem;
   }
 }
 
