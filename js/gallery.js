@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Bind category filter buttons
+  // Bind category filter buttons if present
   if (galleryFilterBtns.length > 0) {
     galleryFilterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
         updateGalleryFilter(filter);
       });
     });
-
-    // Initial check on load
-    updateGalleryFilter('all');
   }
+
+  // Initial check on load to show all gallery items
+  updateGalleryFilter('all');
 
   // Lightbox click handler (Click real image to view full screen modal without text/captions)
   galleryItems.forEach(item => {
