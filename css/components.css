@@ -2190,6 +2190,99 @@ textarea.form-control {
   color: var(--accent-emerald);
 }
 
+/* Footer Social Media Section */
+.footer-social-container {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.55rem 1.25rem;
+  min-height: 42px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid var(--accent-emerald);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.footer-social-btn:hover,
+.footer-social-btn:focus-visible {
+  background-color: var(--accent-emerald);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 200, 150, 0.35);
+  border-color: var(--accent-emerald);
+  outline: none;
+}
+
+.footer-social-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.footer-social-btn:hover .footer-social-icon {
+  transform: scale(1.1);
+}
+
+@media (min-width: 993px) {
+  .footer-grid > div:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+  .footer-grid > div:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+  .footer-social-container {
+    grid-column: 3 / span 2;
+    grid-row: 2;
+    margin-top: 0;
+    align-self: start;
+  }
+}
+
+@media (max-width: 992px) {
+  .footer-social-container {
+    grid-column: 1 / -1;
+    margin-top: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-social-container {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    width: 100%;
+    margin-top: 1.25rem;
+  }
+  .footer-social-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0.6rem 0.5rem !important;
+    font-size: 0.85rem !important;
+    white-space: nowrap !important;
+  }
+}
+
 .footer-bottom {
   padding-top: 1.5rem;
   border-top: 1px solid var(--border-subtle);
